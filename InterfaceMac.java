@@ -10,16 +10,17 @@ public class InterfaceMac {
 	public  InterfaceMac(String newMac){
 		this.mac=newMac;
 	}
-
-  //mutateur
+	
+	//mutateur
 	public void setMac(String newMac){
 		this.mac=newMac;
 	}
-
-  //Accesseur en lecture
+	
+	//Accesseur en lecture
 	public String getMac(){
 		return mac;
 	}
+	//Test git avec eclipse
 
 	public static void main(String[] args){
 		InterfaceMac test=new InterfaceMac("14a5.5afb.2c2b");

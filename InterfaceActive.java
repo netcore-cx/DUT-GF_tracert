@@ -14,19 +14,21 @@ public class InterfaceActive extends InterfaceMac{
     this.ip=ipAdr;
     this.mask=maskAdr;
 	}
-
-  //mutateur
+	
+	//mutateur
 	public void setIp(String newIp){
 		this.ip=newIp;
 	}
-  public void setMask(String newMask){
-    this.mask=newMask;
-  }
-
-  //Accesseur en lecture
-  public Strinf getIp(){
-    return ip;
-  }
+	
+	public void setMask(String newMask){
+		this.mask=newMask;
+	}
+	//Accesseur en lecture
+	public String getIp(){
+		return ip;
+	}
+	//Test git avec eclipse
+	
 	public String getMask(){
 		return mask;
 	}
