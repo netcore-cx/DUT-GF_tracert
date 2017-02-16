@@ -3,6 +3,7 @@ public class InterfaceMac {
 	public static final String MAC="0000.0000.0000";
 	private String mac;
 
+	//Constructeur
 	public InterfaceMac(){
 		this.mac=MAC;
 	}
@@ -10,9 +11,12 @@ public class InterfaceMac {
 		this.mac=newMac;
 	}
 
+  //mutateur
 	public void setMac(String newMac){
 		this.mac=newMac;
 	}
+
+  //Accesseur en lecture
 	public String getMac(){
 		return mac;
 	}
