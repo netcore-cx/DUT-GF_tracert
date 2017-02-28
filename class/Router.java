@@ -1,17 +1,17 @@
 import java.util.ArrayList;
 public class Router extends Machine{
-  private ArrayList interface;
+  private ArrayList interfaces;
 
   public Router(){
     super();
-    ArrayList interface = new ArrayList();
+    ArrayList interfaces = new ArrayList();
   }
   public Router(String newName){
     super(newName);
-    ArrayList interface = new ArrayList();
+    ArrayList interfaces = new ArrayList();
   }
 
   public ArrayList getInterface(){
-    return interface
+    return interfaces;
   }
 }

@@ -1,17 +1,17 @@
 import java.util.ArrayList;
 public class Switch extends Machine{
-  private ArrayList interface;
+  private ArrayList interfaces;
 
   public Switch(){
     super();
-    ArrayList interface = new ArrayList();
+    ArrayList interfaces = new ArrayList();
   }
   public Switch(String newName){
     super(newName);
-    ArrayList interface = new ArrayList();
+    ArrayList interfaces = new ArrayList();
   }
 
   public String toSting(){
-    super.toString();
+    return super.toString();
   }
 }
