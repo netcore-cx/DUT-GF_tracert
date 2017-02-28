@@ -1,46 +1,49 @@
-
 public class InterfaceOrdi extends InterfaceActive {
-	public static final String IP="000.000.000.000";
 	private String dns;
 	private String passerelle;
 	
-	//Constructeur
+//Constructeurs
 	public InterfaceOrdi(){
 		super();
-		this.dns=IP;
-		this.passerelle=IP;
+		this.passerelle = IP;
+		this.dns = IP;
 	}
-	public InterfaceOrdi(String mac, String ip, String mask, String dnsAdr, String passAdr){
+	
+	public InterfaceOrdi(String mac, String ip, String mask, String passAdr, String dnsAdr){
 		super(mac, ip, mask);
-		this.dns=dnsAdr;
-		this.passerelle=passAdr;
+		this.passerelle = passAdr;
+		this.dns = dnsAdr;
 	}
 	
-	//Lecture
+//Accesseurs en lecture
+	public String toString(){
+		return super.toString() + ":" + this.passerelle + ":" + ths.dns;
+	}
+	
 	public String getDns(){
-		return dns;
+		return this.dns;
 	}
+	
 	public String getPasserelle(){
-		return passerelle;
+		return this.passerelle;
 	}
 	
-	//Ecriture
+//Accesseurs en écriture
 	public void setDns(String dnsAdr){
-		this.dns=dnsAdr;
-	}
-	public void setPasserelle(String passAdr){
-		this.passerelle=passAdr;
+		this.dns = dnsAdr;
 	}
 	
+	public void setPasserelle(String passAdr){
+		this.passerelle = passAdr;
+	}
+	
+//Méthode de test
 	public static void main(String[] args){
-		InterfaceOrdi test=new InterfaceOrdi("14a5.5afb.2c2b", "192.168.1.2", "255.255.255.0", "8.8.8.8", "192.168.1.254");
+		InterfaceOrdi test = new InterfaceOrdi("14a5.5afb.2c2b", "192.168.1.2", "255.255.255.0", "192.168.1.254", "8.8.8.8");
 		System.out.println(test.getDns());
 		System.out.println(test.getPasserelle());
 		System.out.println(test.getIp());
 		System.out.println(test.getMask());
 		System.out.println(test.getMac());
 	}
-	
-	
-
 }
