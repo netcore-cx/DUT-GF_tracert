@@ -6,36 +6,36 @@ public class InterfaceActive extends InterfaceMac{
 //Constructeurs
 	public InterfaceActive(){
     		super();
-		this.ip=IP;
-  		this.mask=IP;
+				this.ip=IP;
+				this.mask=IP;
 	}
-	
+
 	public  InterfaceActive(String macAdr, String ipAdr, String maskAdr){
-   		super(macAdr);
-  		this.ip = ipAdr;
-    		this.mask = maskAdr;
+		super(macAdr);
+		this.ip = ipAdr;
+		this.mask = maskAdr;
 	}
 
 //Accesseurs en lecture
 	public String toString(){
 		return super.toString() + ":" + this.IP + ":" + this.mask;
 	}
-	
+
 	public String getIp(){
 		return this.ip;
 	}
-	
+
 	public String getMask(){
 		return this.mask;
 	}
-	
+
 //Accesseurs en ecriture
 	public void setIp(String newIp){
 		this.ip=newIp;
 	}
-	
+
 	public void setMask(String newMask){
 		this.mask=newMask;
-	}	
-	
+	}
+
 }
