@@ -10,8 +10,8 @@ public class Ordi extends Machine {
     ArrayList interface = new ArrayList();
     ArrayList service = new ArrayList();
   }
-  public Ordi(String newMac){
-    super(newMac);
+  public Ordi(String newName){
+    super(newName);
     ArrayList interface = new ArrayList();
     ArrayList service = new ArrayList();
   }
