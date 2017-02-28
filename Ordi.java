@@ -22,4 +22,7 @@ public class Ordi extends Machine {
   public ArrayList getService(){
     return service;
   }
+  public String toSting(){
+    super.toString();
+  }
 }
