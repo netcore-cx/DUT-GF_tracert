@@ -1,17 +1,22 @@
 import java.util.ArrayList;
-public class Switch extends Machine{
-  private ArrayList interfaces;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
 
+public class Switch extends Machine{
+  private List<InterfaceMac> intMac;
+
+  //Constructeur
   public Switch(){
     super();
-    ArrayList interfaces = new ArrayList();
+    intMac = new ArrayList<InterfaceMac>();
   }
   public Switch(String newName){
     super(newName);
-    ArrayList interfaces = new ArrayList();
+    intMac = new ArrayList<InterfaceMac>();
   }
 
-  public String toSting(){
-    return super.toString();
+  public List<InterfaceMac> getInt(){
+	  return intMac;
   }
 }

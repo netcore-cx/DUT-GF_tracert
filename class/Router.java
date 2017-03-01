@@ -1,17 +1,23 @@
 import java.util.ArrayList;
-public class Router extends Machine{
-  private ArrayList interfaces;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
 
+public class Router extends Machine{
+  private List<InterfaceActive> intActive;
+
+  //Constructeur
   public Router(){
     super();
-    ArrayList interfaces = new ArrayList();
+    intActive= new ArrayList<InterfaceActive>();
   }
   public Router(String newName){
     super(newName);
-    ArrayList interfaces = new ArrayList();
+    intActive = new ArrayList<InterfaceActive>();
   }
 
-  public ArrayList getInterface(){
-    return interfaces;
+  //Accesseur Lecture
+  public List<InterfaceActive> getInterface(){
+    return intActive;
   }
 }
