@@ -24,7 +24,9 @@ public class InterfaceMac {
 		this.mac=newMac;
 	}
 	
-//Test git avec eclipse
+	public String toString(){
+		return "@mac : " + mac;
+	}
 	public static void main(String[] args){
 		InterfaceMac test=new InterfaceMac("14a5.5afb.2c2b");
 		System.out.println(test.getMac());
