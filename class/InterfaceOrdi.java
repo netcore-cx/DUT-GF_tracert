@@ -36,6 +36,10 @@ public class InterfaceOrdi extends InterfaceActive {
 	public void setPasserelle(String passAdr){
 		this.passerelle = passAdr;
 	}
+	
+	public String toString(){
+		return super.toString() + " passerelle : " + passerelle + " dns : " + dns;
+	}
 
 //Méthode de test
 	public static void main(String[] args){
