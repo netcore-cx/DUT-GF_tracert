@@ -16,10 +16,6 @@ public class InterfaceOrdi extends InterfaceActive {
 	}
 
 //Accesseurs en lecture
-	public String toString(){
-		return super.toString() + ":" + this.passerelle + ":" + this.dns;
-	}
-
 	public String getDns(){
 		return this.dns;
 	}

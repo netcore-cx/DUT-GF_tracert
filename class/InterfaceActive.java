@@ -17,9 +17,6 @@ public class InterfaceActive extends InterfaceMac{
 	}
 
 //Accesseurs en lecture
-	public String toString(){
-		return super.toString() + ":" + this.IP + ":" + this.mask;
-	}
 
 	public String getIp(){
 		return this.ip;

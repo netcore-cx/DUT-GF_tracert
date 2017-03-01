@@ -11,9 +11,6 @@ public class InterfaceMac {
 	}
 	
 //Accesseur en lecture
-	public String toString(){
-		return this.mac;
-	}
 	
 	public String getMac(){
 		return mac;
