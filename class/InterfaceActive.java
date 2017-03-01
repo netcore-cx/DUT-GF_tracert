@@ -5,9 +5,9 @@ public class InterfaceActive extends InterfaceMac{
 
 //Constructeurs
 	public InterfaceActive(){
-    		super();
-				this.ip=IP;
-				this.mask=IP;
+		super();
+		this.ip=IP;
+		this.mask=IP;
 	}
 
 	public  InterfaceActive(String macAdr, String ipAdr, String maskAdr){
@@ -36,6 +36,9 @@ public class InterfaceActive extends InterfaceMac{
 
 	public void setMask(String newMask){
 		this.mask=newMask;
+	}
+	public String toString(){
+		return super.toString() + " @ip : " + ip + " mask : " + mask;
 	}
 
 }
