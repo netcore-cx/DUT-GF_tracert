@@ -5,34 +5,73 @@ import java.util.ListIterator;
 
 public class Ordi extends Machine {
   public static final String SERVICE = "Un service";
-  private ArrayList<String> service;
-  private List<InterfaceOrdi> intOrdi;
+  private ArrayList<String> serviceList;
+  private ArrayList<InterfaceOrdi> interfaceList;
 
-  //Constructeur
+ //Constructeur
   public Ordi(){
     super();
-    intOrdi = new ArrayList<InterfaceOrdi>();
-    service = new ArrayList<String>();
+    interfaceList = new ArrayList<InterfaceOrdi>();
+    serviceList = new ArrayList<String>();
   }
+  
   public Ordi(String newName){
     super(newName);
-    intOrdi = new ArrayList<InterfaceOrdi>();
-    service = new ArrayList<String>();
+    interfaceList = new ArrayList<InterfaceOrdi>();
+    serviceList = new ArrayList<String>();
   }
 
-  //Ecriture
-  public void setAddInt(InterfaceOrdi inter){
-	  intOrdi.add(inter);
+ //Ecriture
+  
+  public void setInterfaceList(ArrayList newInterfaceList){
+	  this.interfaceList = newInterfaceList;
+  }
+  
+  public void setServiceList(ArrayList newServiceList){
+	  this.serviceList = newServiceList;
+  }
+  
+  public void addInterface(InterfaceOrdi newInterface){
+	  interfaceList.add(newInterface);
+  }
+  
+  public void addService(String newService){
+	  serviceList.add(newService);
+  }
+  
+  public void setInterfaceByID(int id, InterfaceOrdi newInterface){
+	  interfaceList.set(id, newInterface);
+  }
+  
+  public void setServiceById(int id, String newService){
+	  serviceList.set(id, newService);
+  }
+  
+  public void removeInterfaceByID(int id){
+	  interfaceList.remove(id);
+  }
+  
+  public void removeServiceById(int id){
+	  serviceList.remove(id);
   }
   
   //Lecture
-  public List<InterfaceOrdi> getInt(){
-    return intOrdi;
+  public ArrayList<InterfaceOrdi> getInterfaceList(){
+    return interfaceList;
   }
-  public ArrayList<String> getService(){
-    return service;
+  public ArrayList<String> getServiceList(){
+    return serviceList;
+  }
+  
+  public InterfaceOrdi getInterfaceById(int id){
+	  return interfaceList.get(id);
+  }
+  
+  public String getServiceById(int id){
+	  return serviceList.get(id);
   }
 
+ //toString
   public String toString(){
     return super.toString();
   }
