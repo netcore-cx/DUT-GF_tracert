@@ -71,7 +71,7 @@ public class Ordi extends Machine {
 	  return serviceList.get(id);
   }
 
- //Methode toString
+ //toString
   public String toString(){
     return super.toString();
   }
