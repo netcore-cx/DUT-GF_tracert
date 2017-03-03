@@ -24,7 +24,7 @@ public class InterfaceActive extends InterfaceMac{
 		this.mask=newMask;
 	}
 	public String toString(){
-		return super.toString() + ":" + ip + "" + mask;
+		return super.toString() + "|" + ip + "|" + mask;
 	}
 
 //Lecture

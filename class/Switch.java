@@ -47,9 +47,9 @@ public class Switch extends Machine{
 	  int i = 0;
 	  for(i=0; i < interfaceList.size(); i += 1){
 	  	if(i > 0){
-	  		str += ":";
+	  		str += "|";
 	  	}
-	  	str += "int" + i + ":" + getInterfaceById(i).toString();
+	  	str += "int" + i + "|" + getInterfaceById(i).toString();
 	  }
 	  return str;
   }

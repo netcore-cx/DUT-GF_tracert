@@ -74,7 +74,7 @@ public class AccessPoint extends Machine{
 
 //toString
   public String toString(){
-    return super.toString() + ":" + ssid + ":" + key;
+    return super.toString() + "|" + ssid + "|" + key;
   }
   
   public String interfacesToString(){
@@ -84,7 +84,7 @@ public class AccessPoint extends Machine{
 	  	if(i > 0){
 	  		str += ":";
 	  	}
-	  	str += "int" + i + ":" + getInterfaceById(i).toString();
+	  	str += "int" + i + "|" + getInterfaceById(i).toString();
 	  }
 	  return str;
   }
