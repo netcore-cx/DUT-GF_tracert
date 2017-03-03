@@ -47,7 +47,7 @@ public class Ordi extends Machine {
   public String interfacesToString(){
 	  String str = "";
 	  int i = 0;
-	  for(i=0; i < 2; i += 1){
+	  for(i=0; i < interfaceList.size(); i += 1){
 	  	if(i > 0){
 	  		str += ":";
 	  	}
