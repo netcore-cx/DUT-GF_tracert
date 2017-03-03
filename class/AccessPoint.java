@@ -8,31 +8,33 @@ public class AccessPoint extends Machine{
   public static final String DEFAULT_KEY = "None";
   private String ssid;
   private String key;
-  private List<InterfaceMac> intWifi;
+  private ArrayList<InterfaceMac> interfaceList;
 
 //Constructeurs
   public AccessPoint(){
     super();
-    intWifi = new ArrayList<InterfaceMac>();
+    interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = DEFAULT_SSID;
     this.key = DEFAULT_KEY;
   }
 
   public AccessPoint(String newName, String newSsid){
     super(newName);
-    intWifi = new ArrayList<InterfaceMac>();
+    interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = newSsid;
     this.key = DEFAULT_KEY;
   }
 
   public AccessPoint(String newName, String newSsid, String newKey){
     super(newName);
-    intWifi = new ArrayList<InterfaceMac>();
+    interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = newSsid;
     this.key = newKey;
   }
 
-//Accesseurs en lecture
+ //*******************
+  //***** Lecture *****
+  //*******************
   public String getSsid(){
     return this.ssid;
   }
@@ -41,12 +43,17 @@ public class AccessPoint extends Machine{
     return this.key;
   }
 
-  public List<InterfaceMac> getInt(){
-    return intWifi;
+  public ArrayList<InterfaceMac> getInterfaceList(){
+    return interfaceList;
+  }
+  public InterfaceMac getInterfaceById(int id){
+	  return interfaceList.get(id);
   }
 
   
-//Accesseurs en écriture
+  //********************
+  //***** Mutateur *****
+  //********************
   public void setSsid(String newSsid){
     this.ssid = newSsid;
   }
@@ -54,9 +61,19 @@ public class AccessPoint extends Machine{
   public void setKey(String newKey){
     this.ssid = newKey;
   }
+  
+  public void setInterfaceList(ArrayList<InterfaceMac> newInterfaceList){
+	  this.interfaceList = newInterfaceList;
+  }
+  public void addInterface(InterfaceMac newInterface){
+	  interfaceList.add(newInterface);
+  }
+  public void setInterfaceById(int id, InterfaceMac newInterface){
+	  interfaceList.set(id, newInterface);
+  }
 
   
-//toString
+  //toString
   public String toString(){
     return super.toString() + ":" + ssid + ":" + key;
   }

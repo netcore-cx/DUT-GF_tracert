@@ -20,42 +20,10 @@ public class Ordi extends Machine {
     interfaceList = new ArrayList<InterfaceOrdi>();
     serviceList = new ArrayList<String>();
   }
-
- //Ecriture
   
-  public void setInterfaceList(ArrayList newInterfaceList){
-	  this.interfaceList = newInterfaceList;
-  }
-  
-  public void setServiceList(ArrayList newServiceList){
-	  this.serviceList = newServiceList;
-  }
-  
-  public void addInterface(InterfaceOrdi newInterface){
-	  interfaceList.add(newInterface);
-  }
-  
-  public void addService(String newService){
-	  serviceList.add(newService);
-  }
-  
-  public void setInterfaceByID(int id, InterfaceOrdi newInterface){
-	  interfaceList.set(id, newInterface);
-  }
-  
-  public void setServiceById(int id, String newService){
-	  serviceList.set(id, newService);
-  }
-  
-  public void removeInterfaceByID(int id){
-	  interfaceList.remove(id);
-  }
-  
-  public void removeServiceById(int id){
-	  serviceList.remove(id);
-  }
-  
-  //Lecture
+  //*******************
+  //***** Lecture *****
+  //*******************
   public ArrayList<InterfaceOrdi> getInterfaceList(){
     return interfaceList;
   }
@@ -74,5 +42,40 @@ public class Ordi extends Machine {
  //toString
   public String toString(){
     return super.toString();
+  }
+  
+  //********************
+  //***** Mutateur *****
+  //********************
+  public void setInterfaceList(ArrayList<InterfaceOrdi> newInterfaceList){
+	  this.interfaceList = newInterfaceList;
+  }
+  
+  public void setServiceList(ArrayList<String> newServiceList){
+	  this.serviceList = newServiceList;
+  }
+  
+  public void addInterface(InterfaceOrdi newInterface){
+	  interfaceList.add(newInterface);
+  }
+  
+  public void addService(String newService){
+	  serviceList.add(newService);
+  }
+  
+  public void setInterfaceById(int id, InterfaceOrdi newInterface){
+	  interfaceList.set(id, newInterface);
+  }
+  
+  public void setServiceById(int id, String newService){
+	  serviceList.set(id, newService);
+  }
+  
+  public void removeInterfaceById(int id){
+	  interfaceList.remove(id);
+  }
+  
+  public void removeServiceById(int id){
+	  serviceList.remove(id);
   }
 }

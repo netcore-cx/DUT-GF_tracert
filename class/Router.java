@@ -4,20 +4,36 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class Router extends Machine{
-  private List<InterfaceActive> intActive;
-
+  private ArrayList<InterfaceActive> interfaceList;
   //Constructeur
   public Router(){
     super();
-    intActive= new ArrayList<InterfaceActive>();
+    interfaceList = new ArrayList<InterfaceActive>();
   }
   public Router(String newName){
     super(newName);
-    intActive = new ArrayList<InterfaceActive>();
+    interfaceList = new ArrayList<InterfaceActive>();
   }
-
-  //Accesseur Lecture
-  public List<InterfaceActive> getInterface(){
-    return intActive;
+  
+  //Ecriture
+  
+  public void setInterfaceList(ArrayList<InterfaceActive> newInterfaceList){
+	  this.interfaceList = newInterfaceList;
+  }
+  
+  public void addInterface(InterfaceActive newInterfaceActive){
+	  interfaceList.add(newInterfaceActive);
+  }
+  
+  public void setInterfaceById(int id, InterfaceActive newInterfaceActive){
+	  interfaceList.set(id, newInterfaceActive);
+  }
+  
+  //Lecture
+  public ArrayList<InterfaceActive> getInterfaceList(){
+	  return interfaceList;
+  }
+  public InterfaceActive getInterfaceById(int id){
+	  return interfaceList.get(id);
   }
 }
