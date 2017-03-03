@@ -15,8 +15,19 @@ public class InterfaceActive extends InterfaceMac{
 		this.ip = ipAdr;
 		this.mask = maskAdr;
 	}
+	
+//Ecriture
+	public void setIp(String newIp){
+		this.ip=newIp;
+	}
+		public void setMask(String newMask){
+		this.mask=newMask;
+	}
+	public String toString(){
+		return super.toString() + ":" + ip + "" + mask;
+	}
 
-//Accesseurs en lecture
+//Lecture
 
 	public String getIp(){
 		return this.ip;
@@ -25,17 +36,4 @@ public class InterfaceActive extends InterfaceMac{
 	public String getMask(){
 		return this.mask;
 	}
-
-//Accesseurs en ecriture
-	public void setIp(String newIp){
-		this.ip=newIp;
-	}
-
-	public void setMask(String newMask){
-		this.mask=newMask;
-	}
-	public String toString(){
-		return super.toString() + ":" + ip + "" + mask;
-	}
-
 }

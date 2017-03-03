@@ -34,29 +34,7 @@ public class AccessPoint extends Machine{
     this.key = newKey;
   }
 
- //*******************
-  //***** Lecture *****
-  //*******************
-  
-  public String getSsid(){
-    return this.ssid;
-  }
-
-  public String getKey(){
-    return this.key;
-  }
-
-  public ArrayList<InterfaceMac> getInterfaceList(){
-    return interfaceList;
-  }
-  public InterfaceMac getInterfaceById(int id){
-	  return interfaceList.get(id);
-  }
-
-  
-  //********************
-  //***** Mutateur *****
-  //********************
+//Ecriture
   public void setSsid(String newSsid){
     this.ssid = newSsid;
   }
@@ -76,9 +54,25 @@ public class AccessPoint extends Machine{
   public void setInterfaceById(int id, InterfaceMac newInterface){
 	  interfaceList.set(id, newInterface);
   }
-
   
-  //toString
+//Lecture
+  
+  public String getSsid(){
+    return this.ssid;
+  }
+
+  public String getKey(){
+    return this.key;
+  }
+
+  public ArrayList<InterfaceMac> getInterfaceList(){
+    return interfaceList;
+  }
+  public InterfaceMac getInterfaceById(int id){
+	  return interfaceList.get(id);
+  }
+
+//toString
   public String toString(){
     return super.toString() + ":" + ssid + ":" + key;
   }

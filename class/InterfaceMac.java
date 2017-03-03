@@ -9,14 +9,9 @@ public class InterfaceMac {
 	public  InterfaceMac(String newMac){
 		this.mac=newMac;
 	}
-	
-//Accesseur en lecture
-	
-	public String getMac(){
-		return mac;
-	}
-	
-//Accesseurs en ecriture
+
+//Ecriture
+
 	public void setMac(String newMac){
 		this.mac=newMac;
 	}
@@ -28,4 +23,13 @@ public class InterfaceMac {
 		InterfaceMac test=new InterfaceMac("14a5.5afb.2c2b");
 		System.out.println(test.getMac());
 	}
+	
+//Lecture
+	
+	public String getMac(){
+		return mac;
+	}
+	
+//toString
+	
 }

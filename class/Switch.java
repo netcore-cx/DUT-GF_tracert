@@ -17,8 +17,22 @@ public class Switch extends Machine{
     super(newName);
     interfaceList = new ArrayList<InterfaceMac>();
   }
+  
+//Ecriture
+  
+  public void setInterfaceList(ArrayList<InterfaceMac> newInterfaceList){
+	  this.interfaceList = newInterfaceList;
+  }
+  
+  public void addInterface(InterfaceMac newInterface){
+	  interfaceList.add(newInterface);
+  }
+  
+  public void setInterfaceById(int id, InterfaceMac newInterface){
+	  interfaceList.set(id, newInterface);
+  }
 
-  //Lecture
+ //Lecture
   
   public ArrayList<InterfaceMac> getInterfaceList(){
 	  return interfaceList;
@@ -38,19 +52,5 @@ public class Switch extends Machine{
 	  	str += "int" + i + ":" + getInterfaceById(i).toString();
 	  }
 	  return str;
-  }
-  
-  //Ecriture
-  
-  public void setInterfaceList(ArrayList<InterfaceMac> newInterfaceList){
-	  this.interfaceList = newInterfaceList;
-  }
-  
-  public void addInterface(InterfaceMac newInterface){
-	  interfaceList.add(newInterface);
-  }
-  
-  public void setInterfaceById(int id, InterfaceMac newInterface){
-	  interfaceList.set(id, newInterface);
   }
 }
