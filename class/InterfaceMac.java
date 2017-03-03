@@ -16,14 +16,6 @@ public class InterfaceMac {
 		this.mac=newMac;
 	}
 	
-	public String toString(){
-		return mac;
-	}
-	public static void main(String[] args){
-		InterfaceMac test=new InterfaceMac("14a5.5afb.2c2b");
-		System.out.println(test.getMac());
-	}
-	
 //Lecture
 	
 	public String getMac(){
@@ -31,5 +23,7 @@ public class InterfaceMac {
 	}
 	
 //toString
-	
+	public String toString(){
+		return mac;
+	}
 }
