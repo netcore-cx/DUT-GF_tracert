@@ -34,7 +34,7 @@ public class InterfaceOrdi extends InterfaceActive {
 	}
 	
 	public String toString(){
-		return super.toString() + " passerelle : " + passerelle + " dns : " + dns;
+		return super.toString() + ":" + passerelle + ":" + dns;
 	}
 
 //Méthode de test

@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class Router extends Machine{
+	
   private ArrayList<InterfaceActive> interfaceList;
+  
   //Constructeur
+  
   public Router(){
     super();
     interfaceList = new ArrayList<InterfaceActive>();
@@ -30,10 +33,23 @@ public class Router extends Machine{
   }
   
   //Lecture
+  
   public ArrayList<InterfaceActive> getInterfaceList(){
 	  return interfaceList;
   }
   public InterfaceActive getInterfaceById(int id){
 	  return interfaceList.get(id);
+  }
+  
+  public String interfacesToString(){
+	  String str = "";
+	  int i = 0;
+	  for(i=0; i < 2; i += 1){
+	  	if(i > 0){
+	  		str += ":";
+	  	}
+	  	str += "int" + i + ":" + getInterfaceById(i).toString();
+	  }
+	  return str;
   }
 }

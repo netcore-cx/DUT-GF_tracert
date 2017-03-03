@@ -102,6 +102,18 @@ public class test{
 	  
 	  
 	  
+	  System.out.println("");
+	  System.out.println("Interfaces:");
+	  System.out.println("");
 	  
+	  Ordi myOrdi = new Ordi("Jean Claude");
+	  InterfaceOrdi myInterfaceMac = new InterfaceOrdi("1803.1939.8104.1839","192.168.2.62","255.255.255.0","192.168.2.254","8.8.8.8");
+	  InterfaceOrdi myInterfaceMac2 = new InterfaceOrdi("0284.1058.0184.1179","72.16.2.62","255.255.0.0","72.16.255.254","8.8.8.8");
+	  
+	  myOrdi.addInterface(myInterfaceMac);
+	  myOrdi.addInterface(myInterfaceMac2);
+	  
+	  System.out.println(myOrdi.toString());
+	  System.out.println(myOrdi.interfacesToString());
 	  }
   }

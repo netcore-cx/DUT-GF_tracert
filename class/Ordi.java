@@ -44,6 +44,18 @@ public class Ordi extends Machine {
     return super.toString();
   }
   
+  public String interfacesToString(){
+	  String str = "";
+	  int i = 0;
+	  for(i=0; i < 2; i += 1){
+	  	if(i > 0){
+	  		str += ":";
+	  	}
+	  	str += "int" + i + ":" + getInterfaceById(i).toString();
+	  }
+	  return str;
+  }
+  
   //********************
   //***** Mutateur *****
   //********************

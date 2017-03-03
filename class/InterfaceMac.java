@@ -22,7 +22,7 @@ public class InterfaceMac {
 	}
 	
 	public String toString(){
-		return "@mac : " + mac;
+		return mac;
 	}
 	public static void main(String[] args){
 		InterfaceMac test=new InterfaceMac("14a5.5afb.2c2b");
