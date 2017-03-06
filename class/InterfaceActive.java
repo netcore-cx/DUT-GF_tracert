@@ -3,7 +3,9 @@ public class InterfaceActive extends InterfaceMac{
 	private String ip;
  	private String mask;
 
-//Constructeurs
+	//*******************
+  //** Constructeurs **
+  //*******************
 	public InterfaceActive(){
 		super();
 		this.ip=IP;
@@ -15,8 +17,10 @@ public class InterfaceActive extends InterfaceMac{
 		this.ip = ipAdr;
 		this.mask = maskAdr;
 	}
-	
-//Ecriture
+
+	//********************
+  //***** Mutateur *****
+  //********************
 	public void setIp(String newIp){
 		this.ip=newIp;
 	}
@@ -27,8 +31,9 @@ public class InterfaceActive extends InterfaceMac{
 		return super.toString() + "|" + ip + "|" + mask;
 	}
 
-//Lecture
-
+	//*******************
+  //***** Lecture *****
+  //*******************
 	public String getIp(){
 		return this.ip;
 	}

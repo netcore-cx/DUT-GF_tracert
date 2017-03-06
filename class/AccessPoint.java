@@ -4,15 +4,17 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class AccessPoint extends Machine{
-	
+
   public static final String DEFAULT_SSID = "None";
   public static final String DEFAULT_KEY = "None";
-  
+
   private String ssid;
   private String key;
   private ArrayList<InterfaceMac> interfaceList;
 
-//Constructeurs
+	//*******************
+  //** Constructeurs **
+  //*******************
   public AccessPoint(){
     super();
     interfaceList = new ArrayList<InterfaceMac>();
@@ -34,7 +36,9 @@ public class AccessPoint extends Machine{
     this.key = newKey;
   }
 
-//Ecriture
+	//********************
+  //***** Mutateur *****
+  //********************
   public void setSsid(String newSsid){
     this.ssid = newSsid;
   }
@@ -42,21 +46,23 @@ public class AccessPoint extends Machine{
   public void setKey(String newKey){
     this.ssid = newKey;
   }
-  
+
   public void setInterfaceList(ArrayList<InterfaceMac> newInterfaceList){
 	  this.interfaceList = newInterfaceList;
   }
-  
+
   public void addInterface(InterfaceMac newInterface){
 	  interfaceList.add(newInterface);
   }
-  
+
   public void setInterfaceById(int id, InterfaceMac newInterface){
 	  interfaceList.set(id, newInterface);
   }
-  
-//Lecture
-  
+
+
+	//*******************
+  //***** Lecture *****
+  //*******************
   public String getSsid(){
     return this.ssid;
   }
@@ -76,7 +82,7 @@ public class AccessPoint extends Machine{
   public String toString(){
     return super.toString() + "|" + ssid + "|" + key;
   }
-  
+
   public String interfacesToString(){
 	  String str = "";
 	  int i = 0;

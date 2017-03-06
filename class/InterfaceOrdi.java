@@ -2,7 +2,9 @@ public class InterfaceOrdi extends InterfaceActive {
 	private String dns;
 	private String passerelle;
 
-//Constructeurs
+	//*******************
+  //** Constructeurs **
+  //*******************
 	public InterfaceOrdi(){
 		super();
 		this.passerelle = IP;
@@ -15,16 +17,9 @@ public class InterfaceOrdi extends InterfaceActive {
 		this.dns = dnsAdr;
 	}
 
-//Accesseurs en lecture
-	public String getDns(){
-		return this.dns;
-	}
-
-	public String getPasserelle(){
-		return this.passerelle;
-	}
-
-//Accesseurs en écriture
+	//********************
+  //***** Mutateur *****
+  //********************
 	public void setDns(String dnsAdr){
 		this.dns = dnsAdr;
 	}
@@ -32,9 +27,21 @@ public class InterfaceOrdi extends InterfaceActive {
 	public void setPasserelle(String passAdr){
 		this.passerelle = passAdr;
 	}
-	
+
 	public String toString(){
 		return super.toString() + "|" + passerelle + "|" + dns;
+	}
+
+
+	//*******************
+  //***** Lecture *****
+  //*******************
+	public String getDns(){
+		return this.dns;
+	}
+
+	public String getPasserelle(){
+		return this.passerelle;
 	}
 
 //Méthode de test

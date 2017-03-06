@@ -6,42 +6,47 @@ import java.util.ListIterator;
 public class Switch extends Machine{
   private ArrayList<InterfaceMac> interfaceList;
 
-  //Constructeur
-  
+
+  //*******************
+  //** Constructeurs **
+  //*******************
   public Switch(){
     super();
     interfaceList = new ArrayList<InterfaceMac>();
   }
-  
+
   public Switch(String newName){
     super(newName);
     interfaceList = new ArrayList<InterfaceMac>();
   }
-  
-//Ecriture
-  
+
+  //********************
+  //***** Mutateur *****
+  //********************
   public void setInterfaceList(ArrayList<InterfaceMac> newInterfaceList){
 	  this.interfaceList = newInterfaceList;
   }
-  
+
   public void addInterface(InterfaceMac newInterface){
 	  interfaceList.add(newInterface);
   }
-  
+
   public void setInterfaceById(int id, InterfaceMac newInterface){
 	  interfaceList.set(id, newInterface);
   }
 
- //Lecture
-  
+
+  //*******************
+  //***** Lecture *****
+  //*******************
   public ArrayList<InterfaceMac> getInterfaceList(){
 	  return interfaceList;
   }
-  
+
   public InterfaceMac getInterfaceById(int id){
 	  return interfaceList.get(id);
   }
-  
+
   public String interfacesToString(){
 	  String str = "";
 	  int i = 0;
