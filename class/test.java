@@ -38,8 +38,24 @@ public class test{
 	  
 	  
 	  //********************
-	  //*** Test du ping ***
+	  //*** Test du isLocal ***
 	  //********************
+	  
+	  boolean boo = pc.getInterfaceById(0).isLocal("192.168.1.1");
+	  if (boo == true){
+		  System.out.println("ip local");
+	  }
+	  else{
+		  System.out.println("ip pas local");
+	  }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	  InetAddress address = InetAddress.getByName(pc.getInterfaceById(0).getIp());
 	  byte[] ip = address.getAddress();
 	  InetAddress mask = InetAddress.getByName(pc.getInterfaceById(0).getMask());
@@ -84,15 +100,6 @@ public class test{
 	  if (ipTest == true){
 		  System.out.println("ping --> ok");
 	  }
-	  
-	  
-	  
-	  if(maskByte == maskByte2){
-		  
-		  if (ip[0] == ip2[0] && ip[1] == ip2[1]){
-		  //System.out.println("ok");
-		  }
-		}
 	  
 	  System.out.printf("%#x %#x %#x %#x %n", maskByte[0], maskByte[1], maskByte[2], maskByte[3] );
 	  
