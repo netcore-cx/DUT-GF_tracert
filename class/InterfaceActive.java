@@ -43,6 +43,9 @@ public class InterfaceActive extends InterfaceMac{
 		return this.mask;
 	}
 	
+	//******************
+	//***** Method *****
+	//******************
 	public boolean isLocal(String ipDest) throws UnknownHostException{
 		int cptMask=0;
 		
@@ -70,4 +73,13 @@ public class InterfaceActive extends InterfaceMac{
 			}
 		return true;
 		}
+	
+	
+	
+	public boolean isPrivateIp(String addressIp) throws UnknownHostException{
+		InetAddress address = InetAddress.getByName(addressIp);
+		return address.isSiteLocalAddress();
 	}
+	}
+
+

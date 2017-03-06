@@ -37,9 +37,9 @@ public class test{
 	  System.out.println("C'est qui l'papa ??");
 	  
 	  
-	  //********************
+	  //***********************
 	  //*** Test du isLocal ***
-	  //********************
+	  //***********************
 	  
 	  boolean boo = pc.getInterfaceById(0).isLocal("192.168.1.1");
 	  if (boo == true){
@@ -49,14 +49,9 @@ public class test{
 		  System.out.println("ip pas local");
 	  }
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  InetAddress address = InetAddress.getByName(pc.getInterfaceById(0).getIp());
+
+	  //Convertion en byte
+	  InetAddress address = InetAddress.getByName(pc.getInterfaceList().get(0).getIp());
 	  byte[] ip = address.getAddress();
 	  InetAddress mask = InetAddress.getByName(pc.getInterfaceById(0).getMask());
 	  byte[] maskByte = mask.getAddress();
@@ -68,12 +63,22 @@ public class test{
 	  byte[] maskByte2 = mask.getAddress();
 	  
 	  
+	  //C est un @prive
+	  System.out.println(pc.getInterfaceById(0).isPrivateIp("192.168.1.1"));
+	  System.out.println(pc.getInterfaceById(0).isPrivateIp("192.168.2.1"));
+	  System.out.println( pc.getInterfaceById(0).isPrivateIp("192.1.1.1"));
+	  System.out.println(pc.getInterfaceById(0).isPrivateIp("10.0.1.1"));
+	  System.out.println(pc.getInterfaceById(0).isPrivateIp("172.16.1.1"));
+	  System.out.println( pc.getInterfaceById(0).isPrivateIp("171.168.1.1"));
+	  
+	  
+	  //Test du ping
 	  //Test si deux @ip ont le même mask
 	  ipTest = true;
 	  if ( mask.toString().equals(mask2.toString()) == true ){
 		  
 		  //Boucle pour compter le nombre de 255 dans le mask
-		  //qui permetra de déterminer le nombre de byte à comparer
+		  //qui permettra de déterminer le nombre de byte à comparer
 		  //Donc pour l'instant on focntion en class FULL
 		  for(int i=0 ; i<4 ; i++ ){
 			  if(maskByte[i] == (byte)0xff){
