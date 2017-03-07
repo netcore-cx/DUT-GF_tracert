@@ -8,6 +8,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.BorderLayout;
+
+//https://www.developpez.net/forums/d1428230/java/interfaces-graphiques-java/awt-swing/deplacer-objet-souris/
 
 public class MoveComponents extends JPanel {
 
@@ -32,7 +37,19 @@ public class MoveComponents extends JPanel {
 
     private JComponent createComponent() {
       // ici on peut faire n'importe quel JComponent, JLabel, par exemple
-        JPanel component=new JPanel();
+      JPanel component=new JPanel();
+      ImageIcon icon = new ImageIcon("my_image.jpg");
+      JLabel img = new JLabel(icon);
+      component.setLocation((int)(Math.random()*100), (int)(Math.random()*100));
+      component.setSize(128, 128);
+      component.setEnabled(false);
+      img.setIcon(icon);
+      component.add(img);
+      component.setVisible(true);
+      component.setEnabled(false);
+
+
+      /*  JPanel component=new JPanel();
          // position aléatoire
         component.setLocation((int)(Math.random()*100), (int)(Math.random()*100));
          // taille aléatoire
@@ -40,7 +57,7 @@ public class MoveComponents extends JPanel {
         // couleur aléatoire de l'objet
         component.setBackground(COLORS[(int)(Math.random()*COLORS.length)]);
         // les composants ne doivent pas intercepter la souris
-        component.setEnabled(false);
+        */
         return component;
     }
 
@@ -79,7 +96,7 @@ public class MoveComponents extends JPanel {
                     move=true;
                      // on indique le composant sélectionné par une bordure
                      //noire pour dire qu'il peut ètre déplacé
-                    component.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                    //component.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 }
             }
         }
@@ -114,7 +131,7 @@ public class MoveComponents extends JPanel {
         //On ajoute les objets
         frame.setContentPane(new MoveComponents());
 
-        frame.setSize(300, 300);
+        frame.setSize(800, 800);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
