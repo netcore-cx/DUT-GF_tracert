@@ -5,7 +5,7 @@ import java.net.UnknownHostException;
 public class test{
   public static void main(String[] args) throws UnknownHostException{
 	  
-	  //Création et listing des intrfaces MACS
+	  //Crï¿½ation et listing des intrfaces MACS
 	  	System.out.println("Interfaces Mac");
 	  	InterfaceMac myIntMac = new InterfaceMac();
 	  	InterfaceMac myIntMac2 = new InterfaceMac("2222.2222.2222.2222");
@@ -16,7 +16,7 @@ public class test{
 	  		System.out.println(interfaceMacList.get(i).toString());
 	  	}
 	  	
-	  //Création et listing des intrfaces ACTIVES
+	  //Crï¿½ation et listing des intrfaces ACTIVES
 	  	System.out.println("\nInterfaces Actives");
 	  	InterfaceActive myIntActive = new InterfaceActive();
 	  	InterfaceActive myIntActive2 = new InterfaceActive("4444.4444.4444.4444","5555.5555.5555.5555","10.10.10.10","255.0.0.0");
@@ -27,7 +27,7 @@ public class test{
 	  		System.out.println(interfaceActiveList.get(i).toString());
 	  	}
 	  	
-	  //Création et listing des intrfaces ORDIS
+	  //Crï¿½ation et listing des intrfaces ORDIS
 	  	System.out.println("\nInterfaces Ordis");
 	  	InterfaceOrdi myIntOrdi = new InterfaceOrdi();
 	  	InterfaceOrdi myIntOrdi2 = new InterfaceOrdi("6666.6666.6666.6666","2222.2222.2222.2222","192.168.5.2","255.255.255.0","192.168.5.254","8.8.8.8");
@@ -37,5 +37,7 @@ public class test{
 	  	for(int i=0; i<interfaceOrdiList.size(); i+=1){
 	  		System.out.println(interfaceOrdiList.get(i).toString());
 	  	}
+
+	  	System.out.println("Test"),
 	  }
   }
