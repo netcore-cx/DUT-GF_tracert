@@ -15,8 +15,8 @@ public class InterfaceOrdi extends InterfaceActive {
 		allInterfaces.add(this);
 	}
 
-	public InterfaceOrdi(String mac, String ip, String mask, String passAdr, String dnsAdr){
-		super(mac, ip, mask);
+	public InterfaceOrdi(String mac, String linkedTo, String ip, String mask, String passAdr, String dnsAdr){
+		super(mac, linkedTo, ip, mask);
 		this.passerelle = passAdr;
 		this.dns = dnsAdr;
 		allInterfaces.add(this);
@@ -51,15 +51,5 @@ public class InterfaceOrdi extends InterfaceActive {
 	
 	public ArrayList<InterfaceOrdi> getIntOrdiList(){
 		return allInterfaces;
-	}
-
-//Méthode de test
-	public static void main(String[] args){
-		InterfaceOrdi test = new InterfaceOrdi("14a5.5afb.2c2b", "192.168.1.2", "255.255.255.0", "192.168.1.254", "8.8.8.8");
-		System.out.println(test.getDns());
-		System.out.println(test.getPasserelle());
-		System.out.println(test.getIp());
-		System.out.println(test.getMask());
-		System.out.println(test.getMac());
 	}
 }
