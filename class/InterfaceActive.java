@@ -1,5 +1,6 @@
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 public class InterfaceActive extends InterfaceMac{
 	public static final String IP="xxx.xxx.xxx.xxx";
@@ -49,6 +50,7 @@ public class InterfaceActive extends InterfaceMac{
 	//***** Method *****
 	//******************
 	
+	
 	public boolean canPing(String ipDest) throws UnknownHostException{
 		if(isLinkedTo(ipDest)){
 			if(isPrivateIp(ipDest)){
@@ -66,8 +68,11 @@ public class InterfaceActive extends InterfaceMac{
 	}
 	
 	public boolean isLinkedTo(String ipDest){
+		ArrayList<String> knownInterfaces = new ArrayList();
 		return true;
 	}
+	
+	
 	
 	public boolean isLocal(String ipDest) throws UnknownHostException{
 		int cptMask=0;
