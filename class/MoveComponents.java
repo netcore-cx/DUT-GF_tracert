@@ -4,12 +4,26 @@ import java.awt.Container;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import java.awt.GridLayout;
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JWindow;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 import java.awt.BorderLayout;
 
 //https://www.developpez.net/forums/d1428230/java/interfaces-graphiques-java/awt-swing/deplacer-objet-souris/
@@ -17,10 +31,11 @@ import java.awt.BorderLayout;
 public class MoveComponents extends JPanel {
 
     public MoveComponents() {
-      // on supprime le layout manager
+    	// on supprime le layout manager
         setLayout(null);
-
+        
         //Crée l'objet listener --> ComponentMove
+        
         ComponentMove listener = new ComponentMove(this);
 
         //Crée 10 objets que l'on va pouvoir déplacer
@@ -33,20 +48,18 @@ public class MoveComponents extends JPanel {
 
     }
 
-    private final static Color[] COLORS= {Color.RED, Color.GREEN, Color.YELLOW, Color.ORANGE, Color.BLUE, Color.CYAN, Color.MAGENTA, Color.PINK, Color.WHITE, Color.BLACK};
-
     private JComponent createComponent() {
-      // ici on peut faire n'importe quel JComponent, JLabel, par exemple
-      JPanel component=new JPanel();
-      ImageIcon icon = new ImageIcon("my_image.jpg");
-      JLabel img = new JLabel(icon);
-      component.setLocation((int)(Math.random()*100), (int)(Math.random()*100));
-      component.setSize(128, 128);
-      component.setEnabled(false);
-      img.setIcon(icon);
-      component.add(img);
-      component.setVisible(true);
-      component.setEnabled(false);
+    	// ici on peut faire n'importe quel JComponent, JLabel, par exemple
+    	JPanel component=new JPanel();
+    	ImageIcon icon = new ImageIcon("res/icon/my_image.jpg");
+    	JLabel img = new JLabel(icon);
+    	component.setLocation((int)(Math.random()*100), (int)(Math.random()*100));
+    	component.setSize(64, 64);
+    	component.setEnabled(false);
+    	img.setIcon(icon);
+    	component.add(img);
+    	component.setVisible(true);
+    	component.setEnabled(false);
 
 
       /*  JPanel component=new JPanel();
@@ -112,8 +125,9 @@ public class MoveComponents extends JPanel {
             return null;
         }
 
+      //Method qui permet de déplacer les objets
+        
         @Override
-        //Method qui permet de déplacer les objets
         public void mouseMoved(MouseEvent e) {
             if ( move ) {
                 // si on déplace
@@ -125,13 +139,14 @@ public class MoveComponents extends JPanel {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("exemple");
+        JFrame frame = new JFrame("GR_tracert");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        
         //On ajoute les objets
         frame.setContentPane(new MoveComponents());
-
-        frame.setSize(800, 800);
+        
+        frame.setIconImage(new ImageIcon("res/icon/icon.jpg").getImage());
+        frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
