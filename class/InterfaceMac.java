@@ -47,8 +47,8 @@ public class InterfaceMac {
 		return linkedTo;
 	}
 	
-	public ArrayList<InterfaceMac> getInterfaceList(){
-		return this.allInterfaces;
+	public ArrayList<InterfaceMac> getIntMacList(){
+		return allInterfaces;
 	}
 
 //toString

@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+
 public class InterfaceOrdi extends InterfaceActive {
+	static ArrayList<InterfaceOrdi> allInterfaces = new ArrayList<InterfaceOrdi>();
 	private String dns;
 	private String passerelle;
 
@@ -9,12 +12,14 @@ public class InterfaceOrdi extends InterfaceActive {
 		super();
 		this.passerelle = IP;
 		this.dns = IP;
+		allInterfaces.add(this);
 	}
 
 	public InterfaceOrdi(String mac, String ip, String mask, String passAdr, String dnsAdr){
 		super(mac, ip, mask);
 		this.passerelle = passAdr;
 		this.dns = dnsAdr;
+		allInterfaces.add(this);
 	}
 
 	//********************
@@ -42,6 +47,10 @@ public class InterfaceOrdi extends InterfaceActive {
 
 	public String getPasserelle(){
 		return this.passerelle;
+	}
+	
+	public ArrayList<InterfaceOrdi> getIntOrdiList(){
+		return allInterfaces;
 	}
 
 //Méthode de test

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class InterfaceActive extends InterfaceMac{
 	public static final String IP="xxx.xxx.xxx.xxx";
+	static ArrayList<InterfaceActive> allInterfaces = new ArrayList<InterfaceActive>();
 	private String ip;
  	private String mask;
 
@@ -14,12 +15,14 @@ public class InterfaceActive extends InterfaceMac{
 		super();
 		this.ip=IP;
 		this.mask=IP;
+		allInterfaces.add(this);
 	}
 
 	public  InterfaceActive(String macAdr, String ipAdr, String maskAdr){
 		super(macAdr);
 		this.ip = ipAdr;
 		this.mask = maskAdr;
+		allInterfaces.add(this);
 	}
 	
 	//********************
@@ -46,6 +49,10 @@ public class InterfaceActive extends InterfaceMac{
 		return this.mask;
 	}
 	
+	public ArrayList<InterfaceActive> getIntActiveList(){
+		return allInterfaces;
+	}
+	
 	//******************
 	//***** Method *****
 	//******************
@@ -68,7 +75,6 @@ public class InterfaceActive extends InterfaceMac{
 	}
 	
 	public boolean isLinkedTo(String ipDest){
-		ArrayList<String> knownInterfaces = new ArrayList();
 		return true;
 	}
 	
