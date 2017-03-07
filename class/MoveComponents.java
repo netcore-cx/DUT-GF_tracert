@@ -32,14 +32,14 @@ public class MoveComponents extends JPanel {
 
     public MoveComponents() {
     	// on supprime le layout manager
-        setLayout(null);
+       //setLayout(null);
         
         //Crée l'objet listener --> ComponentMove
         
         ComponentMove listener = new ComponentMove(this);
 
         //Crée 10 objets que l'on va pouvoir déplacer
-        for(int i=0; i<10; i++) {
+        for(int i=0; i<2; i++) {
             add(createComponent());
         }
         //Ajoute listener
@@ -54,7 +54,7 @@ public class MoveComponents extends JPanel {
     	ImageIcon icon = new ImageIcon("res/icon/my_image.jpg");
     	JLabel img = new JLabel(icon);
     	component.setLocation((int)(Math.random()*100), (int)(Math.random()*100));
-    	component.setSize(64, 64);
+    	component.setSize(128, 128);
     	component.setEnabled(false);
     	img.setIcon(icon);
     	component.add(img);
@@ -138,12 +138,12 @@ public class MoveComponents extends JPanel {
     }
 
     public static void main(String[] args) {
-
         JFrame frame = new JFrame("GR_tracert");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         //On ajoute les objets
-        frame.setContentPane(new MoveComponents());
+        frame.add(new MoveComponents());
+        
         
         frame.setIconImage(new ImageIcon("res/icon/icon.jpg").getImage());
         frame.setSize(600, 600);
