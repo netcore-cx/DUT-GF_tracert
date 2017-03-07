@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.ListIterator;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -39,10 +36,21 @@ public class test{
 	  System.out.println("C'est qui l'papa ??");
 	  
 	  
-	  //********************
-	  //*** Test du ping ***
-	  //********************
-	  InetAddress address = InetAddress.getByName(pc.getInterfaceById(0).getIp());
+	  //***********************
+	  //*** Test du isLocal ***
+	  //***********************
+	  
+	  boolean boo = pc.getInterfaceById(0).isLocal("192.168.1.1");
+	  if (boo == true){
+		  System.out.println("ip local");
+	  }
+	  else{
+		  System.out.println("ip pas local");
+	  }
+	  
+
+	  //Convertion en byte
+	  InetAddress address = InetAddress.getByName(pc.getInterfaceList().get(0).getIp());
 	  byte[] ip = address.getAddress();
 	  InetAddress mask = InetAddress.getByName(pc.getInterfaceById(0).getMask());
 	  byte[] maskByte = mask.getAddress();
@@ -54,12 +62,22 @@ public class test{
 	  byte[] maskByte2 = mask.getAddress();
 	  
 	  
+	  //C est un @prive
+	  System.out.println(pc.getInterfaceById(0).isPrivateIp("192.168.1.1"));
+	  System.out.println(pc.getInterfaceById(0).isPrivateIp("192.168.2.1"));
+	  System.out.println( pc.getInterfaceById(0).isPrivateIp("192.1.1.1"));
+	  System.out.println(pc.getInterfaceById(0).isPrivateIp("10.0.1.1"));
+	  System.out.println(pc.getInterfaceById(0).isPrivateIp("172.16.1.1"));
+	  System.out.println( pc.getInterfaceById(0).isPrivateIp("171.168.1.1"));
+	  
+	  
+	  //Test du ping
 	  //Test si deux @ip ont le même mask
 	  ipTest = true;
 	  if ( mask.toString().equals(mask2.toString()) == true ){
 		  
 		  //Boucle pour compter le nombre de 255 dans le mask
-		  //qui permetra de déterminer le nombre de byte à comparer
+		  //qui permettra de déterminer le nombre de byte à comparer
 		  //Donc pour l'instant on focntion en class FULL
 		  for(int i=0 ; i<4 ; i++ ){
 			  if(maskByte[i] == (byte)0xff){
@@ -86,15 +104,6 @@ public class test{
 	  if (ipTest == true){
 		  System.out.println("ping --> ok");
 	  }
-	  
-	  
-	  
-	  if(maskByte == maskByte2){
-		  
-		  if (ip[0] == ip2[0] && ip[1] == ip2[1]){
-		  //System.out.println("ok");
-		  }
-		}
 	  
 	  System.out.printf("%#x %#x %#x %#x %n", maskByte[0], maskByte[1], maskByte[2], maskByte[3] );
 	  

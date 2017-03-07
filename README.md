@@ -29,3 +29,20 @@ ArrayList<InterfaceActive> getInterfaceList()
 InterfaceActive getInterfaceById(int id)
 ```
 --> Retourne un interface
+
+# Ping
+```
+boolean canPing(@dest)
+```
+ * permet de savoir si une interface peut en ping une autre.fait appelle à d'autres fonctions pour savoir ci c'est le cas ou non
+```
+isLocal(@ipDest)
+```
+ * Permets de savoir si un @ip de destination du ping est dans le même réseau que @ip Src (logiquement -> en faisant un & logique entre @ipDest & maskSrc, et @ipSrc & maskSrc, On comparent les deux net_id trouvait)
+```
+isPrivateIP (@src)
+```
+```
+isLinkedTo(@dest)
+```
+Savoir si l'interface de destination est accéssible avec l'interface source
