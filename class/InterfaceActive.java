@@ -20,6 +20,7 @@ public class InterfaceActive extends InterfaceMac{
 		this.ip = ipAdr;
 		this.mask = maskAdr;
 	}
+	
 	//********************
 	//***** Mutateur *****
 	//********************
@@ -32,6 +33,7 @@ public class InterfaceActive extends InterfaceMac{
 	public String toString(){
 		return super.toString() + "|" + ip + "|" + mask;
 	}
+	
 	//*******************
 	//***** Lecture *****
 	//*******************
@@ -46,6 +48,27 @@ public class InterfaceActive extends InterfaceMac{
 	//******************
 	//***** Method *****
 	//******************
+	
+	public boolean canPing(String ipDest) throws UnknownHostException{
+		if(isLinkedTo(ipDest)){
+			if(isPrivateIp(ipDest)){
+				if(isLocal(ipDest)){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return true;
+			}
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean isLinkedTo(String ipDest){
+		return true;
+	}
+	
 	public boolean isLocal(String ipDest) throws UnknownHostException{
 		int cptMask=0;
 		
@@ -74,12 +97,10 @@ public class InterfaceActive extends InterfaceMac{
 		return true;
 		}
 	
-	
-	
 	public boolean isPrivateIp(String addressIp) throws UnknownHostException{
 		InetAddress address = InetAddress.getByName(addressIp);
 		return address.isSiteLocalAddress();
 	}
-	}
+}
 
 
