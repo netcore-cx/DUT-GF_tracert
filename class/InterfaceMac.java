@@ -3,27 +3,27 @@ import java.util.ArrayList;
 public class InterfaceMac {
 	public static final String MAC="0000.0000.0000";
 	static ArrayList<InterfaceMac> allInterfaces = new ArrayList<InterfaceMac>();
+	private Machine machine;
 	private String mac;
-	private String linkedTo;
 	
 	//*******************
   //** Constructeurs **
   //*******************
 	public InterfaceMac(){
 		this.mac = MAC;
-		this.linkedTo = "None";
+		this.machine = new Machine();
 		allInterfaces.add(this);
 	}
 	public InterfaceMac(String newMac){
 		this.mac = newMac;
-		this.linkedTo = "None";
 		allInterfaces.add(this);
 	}
-	public InterfaceMac(String newMac, String newLink){
+	public InterfaceMac(String newMac, Machine machine){
 		this.mac = newMac;
-		this.linkedTo = newLink;
+		this.machine = machine;
 		allInterfaces.add(this);
 	}
+	
 
 	//********************
   //***** Mutateur *****
@@ -31,9 +31,8 @@ public class InterfaceMac {
 	public void setMac(String newMac){
 		this.mac=newMac;
 	}
-	
-	public void setLink(String newLink){
-		this.linkedTo = newLink;
+	public void setMachine(Machine machine){
+		this.machine = machine;
 	}
 
 	//*******************
@@ -42,9 +41,8 @@ public class InterfaceMac {
 	public String getMac(){
 		return mac;
 	}
-	
-	public String getLink(){
-		return linkedTo;
+	public Machine getMachine(){
+		return machine;
 	}
 	
 	public ArrayList<InterfaceMac> getIntMacList(){
@@ -53,6 +51,6 @@ public class InterfaceMac {
 
 //toString
 	public String toString(){
-		return mac + "|" + linkedTo;
+		return machine.toString() + "|" + mac;
 	}
 }
