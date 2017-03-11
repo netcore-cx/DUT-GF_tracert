@@ -9,7 +9,7 @@ public class test{
 	  	System.out.println("Interfaces Mac");
 	  	InterfaceMac myIntMac = new InterfaceMac();
 	  	InterfaceMac myIntMac2 = new InterfaceMac("2222.2222.2222.2222");
-	  	InterfaceMac myIntMac3 = new InterfaceMac("3333.3333.3333.3333","4444.4444.4444.4444");
+	  	InterfaceMac myIntMac3 = new InterfaceMac("Jean", "3333.3333.3333.3333");
 	  	ArrayList<InterfaceMac> interfaceMacList = myIntMac.getIntMacList();
 	  	
 	  	for(int i=0; i<interfaceMacList.size(); i+=1){
@@ -37,7 +37,5 @@ public class test{
 	  	for(int i=0; i<interfaceOrdiList.size(); i+=1){
 	  		System.out.println(interfaceOrdiList.get(i).toString());
 	  	}
-
-	  	System.out.println("Test"),
 	  }
   }

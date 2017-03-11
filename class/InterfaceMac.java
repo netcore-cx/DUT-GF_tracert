@@ -2,8 +2,9 @@ import java.util.ArrayList;
 
 public class InterfaceMac {
 	public static final String MAC="0000.0000.0000";
+	public static final String NAME="Interface";
 	static ArrayList<InterfaceMac> allInterfaces = new ArrayList<InterfaceMac>();
-	private Machine machine;
+	private String name;
 	private String mac;
 	
 	//*******************
@@ -11,16 +12,17 @@ public class InterfaceMac {
   //*******************
 	public InterfaceMac(){
 		this.mac = MAC;
-		this.machine = new Machine();
+		this.name = NAME;
 		allInterfaces.add(this);
 	}
 	public InterfaceMac(String newMac){
 		this.mac = newMac;
+		this.name = NAME;
 		allInterfaces.add(this);
 	}
-	public InterfaceMac(String newMac, Machine machine){
+	public InterfaceMac(String name, String newMac){
 		this.mac = newMac;
-		this.machine = machine;
+		this.name = name;
 		allInterfaces.add(this);
 	}
 	
@@ -31,8 +33,8 @@ public class InterfaceMac {
 	public void setMac(String newMac){
 		this.mac=newMac;
 	}
-	public void setMachine(Machine machine){
-		this.machine = machine;
+	public void setName(String name){
+		this.name = name;
 	}
 
 	//*******************
@@ -41,8 +43,8 @@ public class InterfaceMac {
 	public String getMac(){
 		return mac;
 	}
-	public Machine getMachine(){
-		return machine;
+	public String getName(){
+		return name;
 	}
 	
 	public ArrayList<InterfaceMac> getIntMacList(){
@@ -51,6 +53,6 @@ public class InterfaceMac {
 
 //toString
 	public String toString(){
-		return machine.toString() + "|" + mac;
+		return name + "|" + mac;
 	}
 }

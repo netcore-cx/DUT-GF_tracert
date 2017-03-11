@@ -15,8 +15,8 @@ public class InterfaceOrdi extends InterfaceActive {
 		allInterfaces.add(this);
 	}
 
-	public InterfaceOrdi(String mac, String linkedTo, String ip, String mask, String passAdr, String dnsAdr){
-		super(mac, linkedTo, ip, mask);
+	public InterfaceOrdi(String name, String mac, String ip, String mask, String passAdr, String dnsAdr){
+		super(name, mac, ip, mask);
 		this.passerelle = passAdr;
 		this.dns = dnsAdr;
 		allInterfaces.add(this);

@@ -18,8 +18,8 @@ public class InterfaceActive extends InterfaceMac{
 		allInterfaces.add(this);
 	}
 
-	public  InterfaceActive(String macAdr, String linkedTo, String ipAdr, String maskAdr){
-		super(macAdr, linkedTo);
+	public  InterfaceActive(String name, String macAdr, String ipAdr, String maskAdr){
+		super(name, macAdr);
 		this.ip = ipAdr;
 		this.mask = maskAdr;
 		allInterfaces.add(this);

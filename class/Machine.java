@@ -1,4 +1,4 @@
-public abstract class Machine {
+public class Machine {
 	public static final String DEFAULT_NAME = "Machine";
 	private String name;
 
