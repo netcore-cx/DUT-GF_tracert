@@ -19,7 +19,9 @@ public class Switch extends Machine{
   public Switch(String newName){
     super(newName);
     interfaceList = new ArrayList<InterfaceMac>();
-    switchList.add(this);
+    if(newName != "ReadOnly"){
+    	switchList.add(this);
+    }
   }
 
   //********************
@@ -48,15 +50,27 @@ public class Switch extends Machine{
   public ArrayList<Switch> getSwitchList(){
 	  return switchList;
   }
+  
+  public String switchsToString(){
+	  String str = "";
+	  int i = 0;
+	  for(i=0; i < switchList.size(); i += 1){
+	  	if(i > 0){
+	  		str += "\n";
+	  	}
+	  	str += getSwitchList().get(i).toString();
+	  }
+	  return str;
+  }
 
   public String interfacesToString(){
 	  String str = "";
 	  int i = 0;
 	  for(i=0; i < interfaceList.size(); i += 1){
 	  	if(i > 0){
-	  		str += "|";
+	  		str += "\n";
 	  	}
-	  	str += "int" + i + "|" + getInterfaceList().get(i).toString();
+	  	str += getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

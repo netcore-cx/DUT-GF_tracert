@@ -21,7 +21,9 @@ public class Ordi extends Machine {
     super(newName);
     interfaceList = new ArrayList<InterfaceOrdi>();
     serviceList = new ArrayList<String>();
-    ordiList.add(this);
+    if(newName != "ReadOnly"){
+    	ordiList.add(this);
+  	}
   }
 
   //********************
@@ -64,15 +66,27 @@ public class Ordi extends Machine {
   public String toString(){
     return super.toString();
   }
+  
+  public String ordisToString(){
+	  String str = "";
+	  int i = 0;
+	  for(i=0; i < ordiList.size(); i += 1){
+	  	if(i > 0){
+	  		str += "\n";
+	  	}
+	  	str += getOrdiList().get(i).toString();
+	  }
+	  return str;
+  }
 
   public String interfacesToString(){
 	  String str = "";
 	  int i = 0;
 	  for(i=0; i < interfaceList.size(); i += 1){
 	  	if(i > 0){
-	  		str += "|";
+	  		str += "\n";
 	  	}
-	  	str += "int" + i + "|" + getInterfaceList().get(i).toString();
+	  	str += getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

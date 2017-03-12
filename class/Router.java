@@ -17,7 +17,9 @@ public class Router extends Machine{
   public Router(String newName){
     super(newName);
     interfaceList = new ArrayList<InterfaceActive>();
-    routerList.add(this);
+    if(newName != "ReadOnly"){
+    	routerList.add(this);
+    }
   }
 
 	//********************
@@ -43,15 +45,27 @@ public class Router extends Machine{
   public ArrayList<Router> getRouterList(){
 	  return routerList;
   }
+  
+  public String routersToString(){
+	  String str = "";
+	  int i = 0;
+	  for(i=0; i < routerList.size(); i += 1){
+	  	if(i > 0){
+	  		str += "\n";
+	  	}
+	  	str += getRouterList().get(i).toString();
+	  }
+	  return str;
+  }
 
   public String interfacesToString(){
 	  String str = "";
 	  int i = 0;
 	  for(i=0; i < interfaceList.size(); i += 1){
 	  	if(i > 0){
-	  		str += "|";
+	  		str += "\n";
 	  	}
-	  	str += "int" + i + "|" + getInterfaceList().get(i).toString();
+	  	str += getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

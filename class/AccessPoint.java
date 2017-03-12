@@ -5,7 +5,7 @@ public class AccessPoint extends Machine{
   public static final String DEFAULT_SSID = "None";
   public static final String DEFAULT_KEY = "None";
   
-  static ArrayList<AccessPoint> apList = new ArrayList<AccessPoint>();
+  static ArrayList<AccessPoint> APList = new ArrayList<AccessPoint>();
 
   private String ssid;
   private String key;
@@ -19,7 +19,7 @@ public class AccessPoint extends Machine{
     interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = DEFAULT_SSID;
     this.key = DEFAULT_KEY;
-    apList.add(this);
+    APList.add(this);
   }
   
   public AccessPoint(String newName){
@@ -27,7 +27,9 @@ public class AccessPoint extends Machine{
 	    interfaceList = new ArrayList<InterfaceMac>();
 	    this.ssid = DEFAULT_SSID;
 	    this.key = DEFAULT_KEY;
-	    apList.add(this);
+		if(newName != "ReadOnly"){
+			APList.add(this);
+		}
 	  }
 
   public AccessPoint(String newName, String newSsid){
@@ -35,7 +37,7 @@ public class AccessPoint extends Machine{
     interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = newSsid;
     this.key = DEFAULT_KEY;
-    apList.add(this);
+    APList.add(this);
   }
 
   public AccessPoint(String newName, String newSsid, String newKey){
@@ -43,7 +45,7 @@ public class AccessPoint extends Machine{
     interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = newSsid;
     this.key = newKey;
-    apList.add(this);
+    APList.add(this);
   }
 
 	//********************
@@ -68,8 +70,8 @@ public class AccessPoint extends Machine{
   public void setInterfaceById(int id, InterfaceMac newInterface){
 	  interfaceList.set(id, newInterface);
   }
-  public void setapList(ArrayList<AccessPoint> apList){
-	  this.apList = apList;
+  public void setapList(ArrayList<AccessPoint> APList){
+	  this.APList = APList;
   }
 
 
@@ -87,11 +89,8 @@ public class AccessPoint extends Machine{
   public ArrayList<InterfaceMac> getInterfaceList(){
     return interfaceList;
   }
-  public InterfaceMac getInterfaceById(int id){
-	  return interfaceList.get(id);
-  }
-  public ArrayList<AccessPoint> getapList(){
-	  return apList;
+  public ArrayList<AccessPoint> getAPList(){
+	  return APList;
   }
 
 //toString
@@ -99,6 +98,18 @@ public class AccessPoint extends Machine{
     return super.toString() + "|" + ssid + "|" + key;
   }
 
+  public String APsToString(){
+	  String str = "";
+	  int i = 0;
+	  for(i=0; i < APList.size(); i += 1){
+	  	if(i > 0){
+	  		str += "\n";
+	  	}
+	  	str += getAPList().get(i).toString();
+	  }
+	  return str;
+  }
+  
   public String interfacesToString(){
 	  String str = "";
 	  int i = 0;
@@ -106,7 +117,7 @@ public class AccessPoint extends Machine{
 	  	if(i > 0){
 	  		str += ":";
 	  	}
-	  	str += "int" + i + "|" + getInterfaceById(i).toString();
+	  	str += getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

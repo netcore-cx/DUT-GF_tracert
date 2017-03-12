@@ -16,7 +16,9 @@ public class Machine {
 	}
 	public  Machine(String newName){
 		this.name = newName;
-		machineList.add(this);
+		if(newName != "ReadOnly"){
+			machineList.add(this);
+		}
 	}
 
 
@@ -44,4 +46,16 @@ public class Machine {
 	public ArrayList<Machine> getMachineList(){
 		return machineList;
 	}
+	
+	public String machinesToString(){
+		  String str = "";
+		  int i = 0;
+		  for(i=0; i < machineList.size(); i += 1){
+		  	if(i > 0){
+		  		str += "\n";
+		  	}
+		  	str += getMachineList().get(i).toString();
+		  }
+		  return str;
+	  }
 }

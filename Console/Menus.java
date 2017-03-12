@@ -4,20 +4,22 @@ public class Menus {
 	private static Scanner cin = new Scanner(System.in);
 	public Menus() {}
 
-	public static int main(){
-		System.out.println("| MENU PRINCIPAL >");
+	public static int main(String title){
+		System.out.println("| " + title);
 		System.out.println("|");
 		System.out.println("| 1. Ajouter une machine");
 		System.out.println("| 2. Retirer une machine");
 		System.out.println("| 3. Modifier une machine");
+		System.out.println("| 4. Lister les machines");
 		System.out.println("| 0. Quitter l'application");
 		System.out.println("");
-		
+
+		System.out.print("Choix: ");
 		return cin.nextInt();
 	}
 	
-	public static int machine(){
-		System.out.println("| MENU PRINCIPAL > AJOUTER UNE MACHINE >");
+	public static int machine(String title){
+		System.out.println("| " + title);
 		System.out.println("|");
 		System.out.println("| 1. Ordinateur");
 		System.out.println("| 2. Routeur");
@@ -26,6 +28,7 @@ public class Menus {
 		System.out.println("| 0. Retour");
 		System.out.println("");
 		
+		System.out.print("Choix: ");
 		return cin.nextInt();
 	}
 }
