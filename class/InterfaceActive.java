@@ -17,6 +17,15 @@ public class InterfaceActive extends InterfaceMac{
 		this.mask=IP;
 		allInterfaces.add(this);
 	}
+	
+	public InterfaceActive(String name){
+		super(name);
+		this.ip=IP;
+		this.mask=IP;
+		if(name == "ReadOnly"){
+			allInterfaces.add(this);
+		}
+	}
 
 	public  InterfaceActive(String name, String macAdr, String ipAdr, String maskAdr){
 		super(name, macAdr);

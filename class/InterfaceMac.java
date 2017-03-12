@@ -15,10 +15,12 @@ public class InterfaceMac {
 		this.name = NAME;
 		allInterfaces.add(this);
 	}
-	public InterfaceMac(String newMac){
-		this.mac = newMac;
-		this.name = NAME;
-		allInterfaces.add(this);
+	public InterfaceMac(String name){
+		this.name = name;
+		this.mac = MAC;
+		if(name == "ReadOnly"){
+			allInterfaces.add(this);
+		}
 	}
 	public InterfaceMac(String name, String newMac){
 		this.mac = newMac;
