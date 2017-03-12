@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 public class Ordi extends Machine {
   public static final String SERVICE = "Un service";
+  
+  static ArrayList<Ordi> ordiList = new ArrayList<Ordi>();
+  
   private ArrayList<String> serviceList;
   private ArrayList<InterfaceOrdi> interfaceList;
 
@@ -12,12 +15,13 @@ public class Ordi extends Machine {
     super();
     interfaceList = new ArrayList<InterfaceOrdi>();
     serviceList = new ArrayList<String>();
+    ordiList.add(this);
   }
-
   public Ordi(String newName){
     super(newName);
     interfaceList = new ArrayList<InterfaceOrdi>();
     serviceList = new ArrayList<String>();
+    ordiList.add(this);
   }
 
   //********************
@@ -38,21 +42,8 @@ public class Ordi extends Machine {
   public void addService(String newService){
 	  serviceList.add(newService);
   }
-
-  public void setInterfaceById(int id, InterfaceOrdi newInterface){
-	  interfaceList.set(id, newInterface);
-  }
-
-  public void setServiceById(int id, String newService){
-	  serviceList.set(id, newService);
-  }
-
-  public void removeInterfaceById(int id){
-	  interfaceList.remove(id);
-  }
-
-  public void removeServiceById(int id){
-	  serviceList.remove(id);
+  public void setOrdiList(ArrayList<Ordi> ordiList){
+	  this.ordiList = ordiList;
   }
 
 
@@ -65,13 +56,8 @@ public class Ordi extends Machine {
   public ArrayList<String> getServiceList(){
     return serviceList;
   }
-
-  public InterfaceOrdi getInterfaceById(int id){
-	  return interfaceList.get(id);
-  }
-
-  public String getServiceById(int id){
-	  return serviceList.get(id);
+  public ArrayList<Ordi> getOrdiList(){
+	  return ordiList;
   }
 
  //toString
@@ -86,7 +72,7 @@ public class Ordi extends Machine {
 	  	if(i > 0){
 	  		str += "|";
 	  	}
-	  	str += "int" + i + "|" + getInterfaceById(i).toString();
+	  	str += "int" + i + "|" + getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

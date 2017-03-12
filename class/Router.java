@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class Router extends Machine{
 
+  static ArrayList<Router> routerList = new ArrayList<Router>(); 
+	
   private ArrayList<InterfaceActive> interfaceList;
 
 	//*******************
@@ -10,10 +12,12 @@ public class Router extends Machine{
   public Router(){
     super();
     interfaceList = new ArrayList<InterfaceActive>();
+    routerList.add(this);
   }
   public Router(String newName){
     super(newName);
     interfaceList = new ArrayList<InterfaceActive>();
+    routerList.add(this);
   }
 
 	//********************
@@ -26,9 +30,8 @@ public class Router extends Machine{
   public void addInterface(InterfaceActive newInterfaceActive){
 	  interfaceList.add(newInterfaceActive);
   }
-
-  public void setInterfaceById(int id, InterfaceActive newInterfaceActive){
-	  interfaceList.set(id, newInterfaceActive);
+  public void setRouterList(ArrayList<Router> routerList){
+	  this.routerList = routerList;
   }
 
 	//*******************
@@ -37,8 +40,8 @@ public class Router extends Machine{
   public ArrayList<InterfaceActive> getInterfaceList(){
 	  return interfaceList;
   }
-  public InterfaceActive getInterfaceById(int id){
-	  return interfaceList.get(id);
+  public ArrayList<Router> getRouterList(){
+	  return routerList;
   }
 
   public String interfacesToString(){
@@ -48,7 +51,7 @@ public class Router extends Machine{
 	  	if(i > 0){
 	  		str += "|";
 	  	}
-	  	str += "int" + i + "|" + getInterfaceById(i).toString();
+	  	str += "int" + i + "|" + getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

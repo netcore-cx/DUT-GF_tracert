@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 
 public class Switch extends Machine{
+	
+  static ArrayList<Switch> switchList = new ArrayList<Switch>();
+	
   private ArrayList<InterfaceMac> interfaceList;
 
 
@@ -10,11 +13,13 @@ public class Switch extends Machine{
   public Switch(){
     super();
     interfaceList = new ArrayList<InterfaceMac>();
+    switchList.add(this);
   }
 
   public Switch(String newName){
     super(newName);
     interfaceList = new ArrayList<InterfaceMac>();
+    switchList.add(this);
   }
 
   //********************
@@ -27,9 +32,9 @@ public class Switch extends Machine{
   public void addInterface(InterfaceMac newInterface){
 	  interfaceList.add(newInterface);
   }
-
-  public void setInterfaceById(int id, InterfaceMac newInterface){
-	  interfaceList.set(id, newInterface);
+  
+  public void setSwitchList(ArrayList<Switch> switchList){
+	  this.switchList = switchList;
   }
 
 
@@ -39,9 +44,9 @@ public class Switch extends Machine{
   public ArrayList<InterfaceMac> getInterfaceList(){
 	  return interfaceList;
   }
-
-  public InterfaceMac getInterfaceById(int id){
-	  return interfaceList.get(id);
+  
+  public ArrayList<Switch> getSwitchList(){
+	  return switchList;
   }
 
   public String interfacesToString(){
@@ -51,7 +56,7 @@ public class Switch extends Machine{
 	  	if(i > 0){
 	  		str += "|";
 	  	}
-	  	str += "int" + i + "|" + getInterfaceById(i).toString();
+	  	str += "int" + i + "|" + getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }
