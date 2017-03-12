@@ -54,7 +54,7 @@ public class Machine {
 		  	if(i > 0){
 		  		str += "\n";
 		  	}
-		  	str += getMachineList().get(i).toString();
+		  	str += Integer.toString(i+1) + ". " + getMachineList().get(i).toString();
 		  }
 		  return str;
 	  }

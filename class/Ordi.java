@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Ordi extends Machine {
   public static final String SERVICE = "Un service";
   
-  static ArrayList<Ordi> ordiList = new ArrayList<Ordi>();
+  static ArrayList<Ordi> ordisList = new ArrayList<Ordi>();
   
   private ArrayList<String> serviceList;
   private ArrayList<InterfaceOrdi> interfaceList;
@@ -15,14 +15,14 @@ public class Ordi extends Machine {
     super();
     interfaceList = new ArrayList<InterfaceOrdi>();
     serviceList = new ArrayList<String>();
-    ordiList.add(this);
+    ordisList.add(this);
   }
-  public Ordi(String newName){
-    super(newName);
+  public Ordi(String name){
+    super(name);
     interfaceList = new ArrayList<InterfaceOrdi>();
     serviceList = new ArrayList<String>();
-    if(newName != "ReadOnly"){
-    	ordiList.add(this);
+    if(name != "ReadOnly"){
+    	ordisList.add(this);
   	}
   }
 
@@ -44,8 +44,8 @@ public class Ordi extends Machine {
   public void addService(String newService){
 	  serviceList.add(newService);
   }
-  public void setOrdiList(ArrayList<Ordi> ordiList){
-	  this.ordiList = ordiList;
+  public void setOrdisList(ArrayList<Ordi> ordiList){
+	  this.ordisList = ordiList;
   }
 
 
@@ -58,8 +58,8 @@ public class Ordi extends Machine {
   public ArrayList<String> getServiceList(){
     return serviceList;
   }
-  public ArrayList<Ordi> getOrdiList(){
-	  return ordiList;
+  public ArrayList<Ordi> getOrdisList(){
+	  return ordisList;
   }
 
  //toString
@@ -70,11 +70,11 @@ public class Ordi extends Machine {
   public String ordisToString(){
 	  String str = "";
 	  int i = 0;
-	  for(i=0; i < ordiList.size(); i += 1){
+	  for(i=0; i < ordisList.size(); i += 1){
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += getOrdiList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + getOrdisList().get(i).toString();
 	  }
 	  return str;
   }
@@ -86,7 +86,7 @@ public class Ordi extends Machine {
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += getInterfaceList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

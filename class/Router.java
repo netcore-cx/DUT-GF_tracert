@@ -32,7 +32,7 @@ public class Router extends Machine{
   public void addInterface(InterfaceActive newInterfaceActive){
 	  interfaceList.add(newInterfaceActive);
   }
-  public void setRouterList(ArrayList<Router> routerList){
+  public void setRoutersList(ArrayList<Router> routerList){
 	  this.routerList = routerList;
   }
 
@@ -42,7 +42,7 @@ public class Router extends Machine{
   public ArrayList<InterfaceActive> getInterfaceList(){
 	  return interfaceList;
   }
-  public ArrayList<Router> getRouterList(){
+  public ArrayList<Router> getRoutersList(){
 	  return routerList;
   }
   
@@ -53,7 +53,7 @@ public class Router extends Machine{
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += getRouterList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + getRoutersList().get(i).toString();
 	  }
 	  return str;
   }
@@ -65,7 +65,7 @@ public class Router extends Machine{
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += getInterfaceList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

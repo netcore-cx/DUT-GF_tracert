@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ConsoleMain {
+	private static Scanner cin = new Scanner(System.in);
 	private static Menus menu = new Menus();
 	private static Adder add = new Adder();
 	
@@ -15,9 +17,9 @@ public class ConsoleMain {
 			}else if(select == 1){
 				addMachines();
 			}else if(select == 2){
-				//removeMachines();
+				removeMachines();
 			}else if(select == 3){
-				//removeMachines();
+				//editMachines();
 			}else if(select == 4){
 				listMachines();
 			}
@@ -44,6 +46,31 @@ public class ConsoleMain {
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}
+		}
+	}
+	
+	public static void removeMachines(){
+		int select;
+		boolean stop = false;
+		Deleter del = new Deleter();
+		while(!stop){
+			select = menu.machine("MENU PRINCIPAL > RETIRER UNE MACHINE >");
+			System.out.println("");
+			
+			if(select == 0){
+				stop = true;
+			}else if(select == 1){
+				del.Ordi();
+			}else if(select == 2){
+				del.Router();
+			}else if(select == 3){
+				del.Switch();
+			}else if(select == 4){
+				del.AccessPoint();
+			}else{
+				System.out.println("[ERREUR] Votre choix est incorrecte");
+			}
+			System.out.println("");
 		}
 	}
 	

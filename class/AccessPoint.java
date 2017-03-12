@@ -70,7 +70,7 @@ public class AccessPoint extends Machine{
   public void setInterfaceById(int id, InterfaceMac newInterface){
 	  interfaceList.set(id, newInterface);
   }
-  public void setapList(ArrayList<AccessPoint> APList){
+  public void setAPsList(ArrayList<AccessPoint> APList){
 	  this.APList = APList;
   }
 
@@ -89,7 +89,7 @@ public class AccessPoint extends Machine{
   public ArrayList<InterfaceMac> getInterfaceList(){
     return interfaceList;
   }
-  public ArrayList<AccessPoint> getAPList(){
+  public ArrayList<AccessPoint> getAPsList(){
 	  return APList;
   }
 
@@ -105,7 +105,7 @@ public class AccessPoint extends Machine{
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += getAPList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + getAPsList().get(i).toString();
 	  }
 	  return str;
   }
@@ -117,7 +117,7 @@ public class AccessPoint extends Machine{
 	  	if(i > 0){
 	  		str += ":";
 	  	}
-	  	str += getInterfaceList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }

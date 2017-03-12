@@ -35,7 +35,7 @@ public class Switch extends Machine{
 	  interfaceList.add(newInterface);
   }
   
-  public void setSwitchList(ArrayList<Switch> switchList){
+  public void setSwitchsList(ArrayList<Switch> switchList){
 	  this.switchList = switchList;
   }
 
@@ -47,7 +47,7 @@ public class Switch extends Machine{
 	  return interfaceList;
   }
   
-  public ArrayList<Switch> getSwitchList(){
+  public ArrayList<Switch> getSwitchsList(){
 	  return switchList;
   }
   
@@ -58,7 +58,7 @@ public class Switch extends Machine{
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += getSwitchList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + getSwitchsList().get(i).toString();
 	  }
 	  return str;
   }
@@ -70,7 +70,7 @@ public class Switch extends Machine{
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += getInterfaceList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + getInterfaceList().get(i).toString();
 	  }
 	  return str;
   }
