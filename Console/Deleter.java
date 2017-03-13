@@ -10,7 +10,7 @@ public class Deleter {
 		System.out.println(Ordi.ordisToString());
 		System.out.print("Supprimer l'ordinateur numéro: ");
 		select = cin.nextInt();
-		Ordi.ordisList.remove(select + 1);
+		Ordi.list.remove(select + 1);
 		System.out.println("[MESSAGE] L'ordinateur à été reitré avec succès !");
 	}
 	
