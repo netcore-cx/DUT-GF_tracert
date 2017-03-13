@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class InterfaceMac {
 	public static final String MAC="0000.0000.0000";
 	public static final String NAME="Interface";
-	static ArrayList<InterfaceMac> allInterfaces = new ArrayList<InterfaceMac>();
+	static ArrayList<InterfaceMac> list = new ArrayList<InterfaceMac>();
 	private String name;
 	private String mac;
 	
@@ -13,19 +13,19 @@ public class InterfaceMac {
 	public InterfaceMac(){
 		this.mac = MAC;
 		this.name = NAME;
-		allInterfaces.add(this);
+		list.add(this);
 	}
 	public InterfaceMac(String name){
 		this.name = name;
 		this.mac = MAC;
 		if(name == "ReadOnly"){
-			allInterfaces.add(this);
+			list.add(this);
 		}
 	}
 	public InterfaceMac(String name, String newMac){
 		this.mac = newMac;
 		this.name = name;
-		allInterfaces.add(this);
+		list.add(this);
 	}
 	
 
@@ -50,7 +50,7 @@ public class InterfaceMac {
 	}
 	
 	public ArrayList<InterfaceMac> getIntMacList(){
-		return allInterfaces;
+		return list;
 	}
 
 //toString

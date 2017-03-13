@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Machine {
 	public static final String DEFAULT_NAME = "Machine";
 	
-	static ArrayList<Machine> machineList = new ArrayList<Machine>();
+	static ArrayList<Machine> list = new ArrayList<Machine>();
 	
 	private String name;
 
@@ -12,13 +12,11 @@ public class Machine {
   //*******************
 	public Machine(){
 		this.name = DEFAULT_NAME;
-		machineList.add(this);
+		list.add(this);
 	}
 	public  Machine(String newName){
 		this.name = newName;
-		if(newName != "ReadOnly"){
-			machineList.add(this);
-		}
+		list.add(this);
 	}
 
 
@@ -28,8 +26,8 @@ public class Machine {
 	public void setName(String newName){
 		this.name = newName;
 	}
-	public void setMachinList(ArrayList<Machine> maichineList){
-		this.machineList = machineList;
+	public void setMachinList(ArrayList<Machine> list){
+		Machine.list = list;
 	}
 
 	//*******************
@@ -44,17 +42,17 @@ public class Machine {
 	}
 	
 	public ArrayList<Machine> getMachineList(){
-		return machineList;
+		return list;
 	}
 	
-	public String machinesToString(){
+	public static String listToString(){
 		  String str = "";
 		  int i = 0;
-		  for(i=0; i < machineList.size(); i += 1){
+		  for(i=0; i < list.size(); i += 1){
 		  	if(i > 0){
 		  		str += "\n";
 		  	}
-		  	str += Integer.toString(i+1) + ". " + getMachineList().get(i).toString();
+		  	str += Integer.toString(i+1) + ". " + list.get(i).toString();
 		  }
 		  return str;
 	  }

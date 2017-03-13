@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class InterfaceOrdi extends InterfaceActive {
-	static ArrayList<InterfaceOrdi> allInterfaces = new ArrayList<InterfaceOrdi>();
+	static ArrayList<InterfaceOrdi> list = new ArrayList<InterfaceOrdi>();
 	private String dns;
 	private String passerelle;
 
@@ -12,7 +12,7 @@ public class InterfaceOrdi extends InterfaceActive {
 		super();
 		this.passerelle = IP;
 		this.dns = IP;
-		allInterfaces.add(this);
+		list.add(this);
 	}
 	
 	public InterfaceOrdi(String name){
@@ -20,7 +20,7 @@ public class InterfaceOrdi extends InterfaceActive {
 		this.passerelle = IP;
 		this.dns = IP;
 		if(name == "ReadOnly"){
-			allInterfaces.add(this);
+			list.add(this);
 		}
 	}
 
@@ -28,7 +28,7 @@ public class InterfaceOrdi extends InterfaceActive {
 		super(name, mac, ip, mask);
 		this.passerelle = passAdr;
 		this.dns = dnsAdr;
-		allInterfaces.add(this);
+		list.add(this);
 	}
 
 	//********************
@@ -59,6 +59,6 @@ public class InterfaceOrdi extends InterfaceActive {
 	}
 	
 	public ArrayList<InterfaceOrdi> getIntOrdiList(){
-		return allInterfaces;
+		return list;
 	}
 }

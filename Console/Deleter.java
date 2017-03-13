@@ -6,15 +6,11 @@ public class Deleter {
 	public Deleter(){}
 	
 	public static void Ordi(){
-		int select = cin.nextInt();
-		Ordi ordi = new Ordi("ReadOnly");
-		System.out.print("test");
-		System.out.println(ordi.ordisToString());
+		int select = cin.nextInt(); 
+		System.out.println(Ordi.ordisToString());
 		System.out.print("Supprimer l'ordinateur numéro: ");
 		select = cin.nextInt();
-		ArrayList<Ordi> list = ordi.getOrdisList();
-		list.remove(select + 1);
-		ordi.setOrdisList(list);
+		Ordi.ordisList.remove(select + 1);
 		System.out.println("[MESSAGE] L'ordinateur à été reitré avec succès !");
 	}
 	

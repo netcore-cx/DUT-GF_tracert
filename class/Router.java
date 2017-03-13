@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Router extends Machine{
 
-  static ArrayList<Router> routerList = new ArrayList<Router>(); 
+  static ArrayList<Router> list = new ArrayList<Router>(); 
 	
   private ArrayList<InterfaceActive> interfaceList;
 
@@ -12,14 +12,12 @@ public class Router extends Machine{
   public Router(){
     super();
     interfaceList = new ArrayList<InterfaceActive>();
-    routerList.add(this);
+    list.add(this);
   }
   public Router(String newName){
     super(newName);
     interfaceList = new ArrayList<InterfaceActive>();
-    if(newName != "ReadOnly"){
-    	routerList.add(this);
-    }
+    list.add(this);
   }
 
 	//********************
@@ -33,7 +31,7 @@ public class Router extends Machine{
 	  interfaceList.add(newInterfaceActive);
   }
   public void setRoutersList(ArrayList<Router> routerList){
-	  this.routerList = routerList;
+	  Router.list = routerList;
   }
 
 	//*******************
@@ -43,17 +41,17 @@ public class Router extends Machine{
 	  return interfaceList;
   }
   public ArrayList<Router> getRoutersList(){
-	  return routerList;
+	  return list;
   }
   
-  public String routersToString(){
+  public static String routersToString(){
 	  String str = "";
 	  int i = 0;
-	  for(i=0; i < routerList.size(); i += 1){
+	  for(i=0; i < list.size(); i += 1){
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += Integer.toString(i+1) + ". " + getRoutersList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + list.get(i).toString();
 	  }
 	  return str;
   }

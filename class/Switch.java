@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Switch extends Machine{
 	
-  static ArrayList<Switch> switchList = new ArrayList<Switch>();
+  static ArrayList<Switch> list = new ArrayList<Switch>();
 	
   private ArrayList<InterfaceMac> interfaceList;
 
@@ -13,15 +13,13 @@ public class Switch extends Machine{
   public Switch(){
     super();
     interfaceList = new ArrayList<InterfaceMac>();
-    switchList.add(this);
+    list.add(this);
   }
 
   public Switch(String newName){
     super(newName);
     interfaceList = new ArrayList<InterfaceMac>();
-    if(newName != "ReadOnly"){
-    	switchList.add(this);
-    }
+    list.add(this);
   }
 
   //********************
@@ -35,8 +33,8 @@ public class Switch extends Machine{
 	  interfaceList.add(newInterface);
   }
   
-  public void setSwitchsList(ArrayList<Switch> switchList){
-	  this.switchList = switchList;
+  public void setSwitchsList(ArrayList<Switch> switchsList){
+	  Switch.list = switchsList;
   }
 
 
@@ -48,17 +46,17 @@ public class Switch extends Machine{
   }
   
   public ArrayList<Switch> getSwitchsList(){
-	  return switchList;
+	  return list;
   }
   
-  public String switchsToString(){
+  public static String switchsToString(){
 	  String str = "";
 	  int i = 0;
-	  for(i=0; i < switchList.size(); i += 1){
+	  for(i=0; i < list.size(); i += 1){
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += Integer.toString(i+1) + ". " + getSwitchsList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + list.get(i).toString();
 	  }
 	  return str;
   }

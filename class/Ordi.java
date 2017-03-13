@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Ordi extends Machine {
   public static final String SERVICE = "Un service";
   
-  static ArrayList<Ordi> ordisList = new ArrayList<Ordi>();
+  static ArrayList<Ordi> list = new ArrayList<Ordi>();
   
   private ArrayList<String> serviceList;
   private ArrayList<InterfaceOrdi> interfaceList;
@@ -15,15 +15,13 @@ public class Ordi extends Machine {
     super();
     interfaceList = new ArrayList<InterfaceOrdi>();
     serviceList = new ArrayList<String>();
-    ordisList.add(this);
+    list.add(this);
   }
   public Ordi(String name){
     super(name);
     interfaceList = new ArrayList<InterfaceOrdi>();
     serviceList = new ArrayList<String>();
-    if(name != "ReadOnly"){
-    	ordisList.add(this);
-  	}
+    list.add(this);
   }
 
   //********************
@@ -45,7 +43,7 @@ public class Ordi extends Machine {
 	  serviceList.add(newService);
   }
   public void setOrdisList(ArrayList<Ordi> ordiList){
-	  this.ordisList = ordiList;
+	  Ordi.list = ordiList;
   }
 
 
@@ -59,7 +57,7 @@ public class Ordi extends Machine {
     return serviceList;
   }
   public ArrayList<Ordi> getOrdisList(){
-	  return ordisList;
+	  return list;
   }
 
  //toString
@@ -67,14 +65,14 @@ public class Ordi extends Machine {
     return super.toString();
   }
   
-  public String ordisToString(){
+  public static String ordisToString(){
 	  String str = "";
 	  int i = 0;
-	  for(i=0; i < ordisList.size(); i += 1){
+	  for(i=0; i < list.size(); i += 1){
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += Integer.toString(i+1) + ". " + getOrdisList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + list.get(i).toString();
 	  }
 	  return str;
   }

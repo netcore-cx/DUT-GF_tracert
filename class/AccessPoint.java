@@ -5,7 +5,7 @@ public class AccessPoint extends Machine{
   public static final String DEFAULT_SSID = "None";
   public static final String DEFAULT_KEY = "None";
   
-  static ArrayList<AccessPoint> APList = new ArrayList<AccessPoint>();
+  static ArrayList<AccessPoint> list = new ArrayList<AccessPoint>();
 
   private String ssid;
   private String key;
@@ -19,7 +19,7 @@ public class AccessPoint extends Machine{
     interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = DEFAULT_SSID;
     this.key = DEFAULT_KEY;
-    APList.add(this);
+    list.add(this);
   }
   
   public AccessPoint(String newName){
@@ -27,9 +27,7 @@ public class AccessPoint extends Machine{
 	    interfaceList = new ArrayList<InterfaceMac>();
 	    this.ssid = DEFAULT_SSID;
 	    this.key = DEFAULT_KEY;
-		if(newName != "ReadOnly"){
-			APList.add(this);
-		}
+		list.add(this);
 	  }
 
   public AccessPoint(String newName, String newSsid){
@@ -37,7 +35,7 @@ public class AccessPoint extends Machine{
     interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = newSsid;
     this.key = DEFAULT_KEY;
-    APList.add(this);
+    list.add(this);
   }
 
   public AccessPoint(String newName, String newSsid, String newKey){
@@ -45,7 +43,7 @@ public class AccessPoint extends Machine{
     interfaceList = new ArrayList<InterfaceMac>();
     this.ssid = newSsid;
     this.key = newKey;
-    APList.add(this);
+    list.add(this);
   }
 
 	//********************
@@ -70,8 +68,8 @@ public class AccessPoint extends Machine{
   public void setInterfaceById(int id, InterfaceMac newInterface){
 	  interfaceList.set(id, newInterface);
   }
-  public void setAPsList(ArrayList<AccessPoint> APList){
-	  this.APList = APList;
+  public void setAPsList(ArrayList<AccessPoint> APsList){
+	  AccessPoint.list = APsList;
   }
 
 
@@ -90,7 +88,7 @@ public class AccessPoint extends Machine{
     return interfaceList;
   }
   public ArrayList<AccessPoint> getAPsList(){
-	  return APList;
+	  return list;
   }
 
 //toString
@@ -98,14 +96,14 @@ public class AccessPoint extends Machine{
     return super.toString() + "|" + ssid + "|" + key;
   }
 
-  public String APsToString(){
+  public static String APsToString(){
 	  String str = "";
 	  int i = 0;
-	  for(i=0; i < APList.size(); i += 1){
+	  for(i=0; i < list.size(); i += 1){
 	  	if(i > 0){
 	  		str += "\n";
 	  	}
-	  	str += Integer.toString(i+1) + ". " + getAPsList().get(i).toString();
+	  	str += Integer.toString(i+1) + ". " + list.get(i).toString();
 	  }
 	  return str;
   }

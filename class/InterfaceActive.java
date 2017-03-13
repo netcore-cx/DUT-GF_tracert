@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class InterfaceActive extends InterfaceMac{
 	public static final String IP="xxx.xxx.xxx.xxx";
-	static ArrayList<InterfaceActive> allInterfaces = new ArrayList<InterfaceActive>();
+	static ArrayList<InterfaceActive> list = new ArrayList<InterfaceActive>();
 	private String ip;
  	private String mask;
 
@@ -15,7 +15,7 @@ public class InterfaceActive extends InterfaceMac{
 		super();
 		this.ip=IP;
 		this.mask=IP;
-		allInterfaces.add(this);
+		list.add(this);
 	}
 	
 	public InterfaceActive(String name){
@@ -23,7 +23,7 @@ public class InterfaceActive extends InterfaceMac{
 		this.ip=IP;
 		this.mask=IP;
 		if(name == "ReadOnly"){
-			allInterfaces.add(this);
+			list.add(this);
 		}
 	}
 
@@ -31,7 +31,7 @@ public class InterfaceActive extends InterfaceMac{
 		super(name, macAdr);
 		this.ip = ipAdr;
 		this.mask = maskAdr;
-		allInterfaces.add(this);
+		list.add(this);
 	}
 	
 	//********************
@@ -59,7 +59,7 @@ public class InterfaceActive extends InterfaceMac{
 	}
 	
 	public ArrayList<InterfaceActive> getIntActiveList(){
-		return allInterfaces;
+		return list;
 	}
 	
 	//******************
