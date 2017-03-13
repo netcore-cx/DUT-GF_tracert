@@ -61,4 +61,16 @@ public class InterfaceOrdi extends InterfaceActive {
 	public ArrayList<InterfaceOrdi> getIntOrdiList(){
 		return list;
 	}
+	
+	public static String listToString(){
+		  String str = "";
+		  int i = 0;
+		  for(i=0; i < list.size(); i += 1){
+		  	if(i > 0){
+		  		str += "\n";
+		  	}
+		  	str += Integer.toString(i+1) + ". " + list.get(i).toString();
+		  }
+		  return str;
+	  }
 }

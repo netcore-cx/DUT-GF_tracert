@@ -65,7 +65,7 @@ public class Ordi extends Machine {
     return super.toString();
   }
   
-  public static String ordisToString(){
+  public static String listToString(){
 	  String str = "";
 	  int i = 0;
 	  for(i=0; i < list.size(); i += 1){

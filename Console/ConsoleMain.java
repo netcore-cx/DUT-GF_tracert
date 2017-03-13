@@ -2,15 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ConsoleMain {
-	private static Scanner cin = new Scanner(System.in);
-	private static Menus menu = new Menus();
-	private static Adder add = new Adder();
-	
 	public static void main(String[] args){
 		int select;
 		boolean stop = false;
 		while(!stop){
-			select = menu.main("MENU PRINCIPAL >");
+			select = Menus.main("MENU PRINCIPAL >");
 			System.out.println("");
 			if(select == 0){
 				stop = true;
@@ -30,19 +26,19 @@ public class ConsoleMain {
 		int select;
 		boolean stop = false;
 		while(!stop){
-			select = menu.machine("MENU PRINCIPAL > AJOUTER UNE MACHINE >");
+			select = Menus.machine("MENU PRINCIPAL > AJOUTER UNE MACHINE >");
 			System.out.println("");
 			
 			if(select == 0){
 				stop = true;
 			}else if(select == 1){
-				add.Ordi();
+				AddMachine.Ordi();
 			}else if(select == 2){
-				add.Router();
+				AddMachine.Router();
 			}else if(select == 3){
-				add.Switch();
+				AddMachine.Switch();
 			}else if(select == 4){
-				add.AccessPoint();
+				AddMachine.AccessPoint();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}
@@ -52,21 +48,20 @@ public class ConsoleMain {
 	public static void removeMachines(){
 		int select;
 		boolean stop = false;
-		Deleter del = new Deleter();
 		while(!stop){
-			select = menu.machine("MENU PRINCIPAL > RETIRER UNE MACHINE >");
+			select = Menus.machine("MENU PRINCIPAL > RETIRER UNE MACHINE >");
 			System.out.println("");
 			
 			if(select == 0){
 				stop = true;
 			}else if(select == 1){
-				del.Ordi();
+				DelMachine.Ordi();
 			}else if(select == 2){
-				del.Router();
+				DelMachine.Router();
 			}else if(select == 3){
-				del.Switch();
+				DelMachine.Switch();
 			}else if(select == 4){
-				del.AccessPoint();
+				DelMachine.AccessPoint();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}
@@ -78,19 +73,19 @@ public class ConsoleMain {
 		int select;
 		boolean stop = false;
 		while(!stop){
-			select = menu.machine("MENU PRINCIPAL > LISTER LES MACHINES >");
+			select = Menus.machine("MENU PRINCIPAL > LISTER LES MACHINES >");
 			System.out.println("");
 			
 			if(select == 0){
 				stop = true;
 			}else if(select == 1){
-				System.out.println(new Ordi("ReadOnly").ordisToString());
+				System.out.println(Ordi.listToString());
 			}else if(select == 2){
-				System.out.println(new Router("ReadOnly").routersToString());
+				System.out.println(Router.listToString());
 			}else if(select == 3){
-				System.out.println(new Switch("ReadOnly").switchsToString());
+				System.out.println(Switch.listToString());
 			}else if(select == 4){
-				System.out.println(new AccessPoint("ReadOnly").APsToString());
+				System.out.println(AccessPoint.listToString());
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}

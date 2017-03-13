@@ -96,7 +96,7 @@ public class AccessPoint extends Machine{
     return super.toString() + "|" + ssid + "|" + key;
   }
 
-  public static String APsToString(){
+  public static String listToString(){
 	  String str = "";
 	  int i = 0;
 	  for(i=0; i < list.size(); i += 1){

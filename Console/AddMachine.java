@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Adder {
+public class AddMachine {
 	private static Scanner cin = new Scanner(System.in);
-	public Adder(){}
+	public AddMachine(){}
 	
 	public static Ordi Ordi(){
 		System.out.print("Nom: ");

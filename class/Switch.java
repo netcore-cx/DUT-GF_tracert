@@ -49,7 +49,7 @@ public class Switch extends Machine{
 	  return list;
   }
   
-  public static String switchsToString(){
+  public static String listToString(){
 	  String str = "";
 	  int i = 0;
 	  for(i=0; i < list.size(); i += 1){

@@ -44,7 +44,7 @@ public class Router extends Machine{
 	  return list;
   }
   
-  public static String routersToString(){
+  public static String listToString(){
 	  String str = "";
 	  int i = 0;
 	  for(i=0; i < list.size(); i += 1){
