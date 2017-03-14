@@ -39,7 +39,7 @@ public class MoveComponents extends JPanel {
         ComponentMove listener = new ComponentMove(this);
 
         //Crée 10 objets que l'on va pouvoir déplacer
-        for(int i=0; i<2; i++) {
+        for(int i=0; i<10; i++) {
             add(createComponent());
         }
         //Ajoute listener
@@ -51,7 +51,7 @@ public class MoveComponents extends JPanel {
     private JComponent createComponent() {
     	// ici on peut faire n'importe quel JComponent, JLabel, par exemple
     	JPanel component=new JPanel();
-    	ImageIcon icon = new ImageIcon("res/icon/my_image.jpg");
+    	ImageIcon icon = new ImageIcon("res/icon/router_64x64.png");
     	JLabel img = new JLabel(icon);
     	component.setLocation((int)(Math.random()*100), (int)(Math.random()*100));
     	component.setSize(128, 128);
