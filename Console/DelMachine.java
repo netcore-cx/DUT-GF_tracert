@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class DelMachine {
 	private static Scanner cin = new Scanner(System.in);
-	
+	 
 	public static void Ordi(){
 		System.out.println(Ordi.listToString());
 		System.out.print("\nSupprimer l'ordinateur numéro: ");
