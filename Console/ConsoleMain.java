@@ -89,4 +89,28 @@ public class ConsoleMain {
 			System.out.println("");
 		}
 	}
+	
+	public static void editMachines(){
+		int select;
+		boolean stop = false;
+		while(!stop){
+			select = Menus.machine("MENU PRINCIPAL > EDITER UNE MACHINE >");
+			System.out.println("");
+			
+			if(select == 0){
+				stop = true;
+			}else if(select == 1){
+				EditMachine.Ordi();
+			}else if(select == 2){
+				EditMachine.Router();
+			}else if(select == 3){
+				EditMachine.Switch();
+			}else if(select == 4){
+				EditMachine.AccessPoint();
+			}else{
+				System.out.println("[ERREUR] Votre choix est incorrecte");
+			}
+			System.out.println("");
+		}
+	}
 }

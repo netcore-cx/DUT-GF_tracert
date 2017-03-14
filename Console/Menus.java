@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Menus {
 	private static Scanner cin = new Scanner(System.in);
-	public Menus() {}
 
 	public static int main(String title){
 		System.out.println("| " + title);

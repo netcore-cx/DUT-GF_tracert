@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class AddMachine {
 	private static Scanner cin = new Scanner(System.in);
-	public AddMachine(){}
 	
 	public static Ordi Ordi(){
 		System.out.print("Nom: ");

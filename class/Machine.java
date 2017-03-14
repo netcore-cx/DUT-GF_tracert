@@ -14,8 +14,8 @@ public class Machine {
 		this.name = DEFAULT_NAME;
 		list.add(this);
 	}
-	public  Machine(String newName){
-		this.name = newName;
+	public  Machine(String name){
+		this.name = name;
 		list.add(this);
 	}
 
