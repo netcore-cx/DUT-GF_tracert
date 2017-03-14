@@ -1,40 +1,40 @@
 public class ConsoleMain {
 	public static void main(String[] args){
-		int select;
+		String select;
 		boolean stop = false;
 		while(!stop){
 			select = Menus.main("MENU PRINCIPAL >");
 			System.out.println("");
-			if(select == 0){
+			if(select.toLowerCase().equals("exit")){
 				stop = true;
-			}else if(select == 1){
+			}else if(select.toLowerCase().equals("add")){
 				addMachines();
-			}else if(select == 2){
+			}else if(select.toLowerCase().equals("remove")){
 				removeMachines();
-			}else if(select == 3){
+			}else if(select.toLowerCase().equals("edit")){
 				//editMachines();
-			}else if(select == 4){
+			}else if(select.toLowerCase().equals("list")){
 				listMachines();
 			}
 		}
 	}
 	
 	public static void addMachines(){
-		int select;
+		String select;
 		boolean stop = false;
 		while(!stop){
 			select = Menus.machine("MENU PRINCIPAL > AJOUTER UNE MACHINE >");
 			System.out.println("");
 			
-			if(select == 0){
+			if(select.toLowerCase().equals("exit")){
 				stop = true;
-			}else if(select == 1){
+			}else if(select.toLowerCase().equals("pc")){
 				AddMachine.Ordi();
-			}else if(select == 2){
+			}else if(select.toLowerCase().equals("router")){
 				AddMachine.Router();
-			}else if(select == 3){
+			}else if(select.toLowerCase().equals("switch")){
 				AddMachine.Switch();
-			}else if(select == 4){
+			}else if(select.toLowerCase().equals("ap")){
 				AddMachine.AccessPoint();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
@@ -43,21 +43,21 @@ public class ConsoleMain {
 	}
 	
 	public static void removeMachines(){
-		int select;
+		String select;
 		boolean stop = false;
 		while(!stop){
 			select = Menus.machine("MENU PRINCIPAL > RETIRER UNE MACHINE >");
 			System.out.println("");
 			
-			if(select == 0){
+			if(select.toLowerCase().equals("exit")){
 				stop = true;
-			}else if(select == 1){
+			}else if(select.toLowerCase().equals("pc")){
 				DelMachine.Ordi();
-			}else if(select == 2){
+			}else if(select.toLowerCase().equals("router")){
 				DelMachine.Router();
-			}else if(select == 3){
+			}else if(select.toLowerCase().equals("switch")){
 				DelMachine.Switch();
-			}else if(select == 4){
+			}else if(select.toLowerCase().equals("ap")){
 				DelMachine.AccessPoint();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
@@ -67,21 +67,21 @@ public class ConsoleMain {
 	}
 	
 	public static void listMachines(){
-		int select;
+		String select;
 		boolean stop = false;
 		while(!stop){
 			select = Menus.machine("MENU PRINCIPAL > LISTER LES MACHINES >");
 			System.out.println("");
 			
-			if(select == 0){
+			if(select.toLowerCase().equals("exit")){
 				stop = true;
-			}else if(select == 1){
+			}else if(select.toLowerCase().equals("pc")){
 				System.out.println(Ordi.listToString());
-			}else if(select == 2){
+			}else if(select.toLowerCase().equals("router")){
 				System.out.println(Router.listToString());
-			}else if(select == 3){
+			}else if(select.toLowerCase().equals("router")){
 				System.out.println(Switch.listToString());
-			}else if(select == 4){
+			}else if(select.toLowerCase().equals("ap")){
 				System.out.println(AccessPoint.listToString());
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
@@ -91,21 +91,21 @@ public class ConsoleMain {
 	}
 	
 	public static void editMachines(){
-		int select;
+		String select;
 		boolean stop = false;
 		while(!stop){
 			select = Menus.machine("MENU PRINCIPAL > EDITER UNE MACHINE >");
 			System.out.println("");
 			
-			if(select == 0){
+			if(select.toLowerCase().equals("exit")){
 				stop = true;
-			}else if(select == 1){
+			}else if(select.toLowerCase().equals("pc")){
 				EditMachine.Ordi();
-			}else if(select == 2){
+			}else if(select.toLowerCase().equals("router")){
 				EditMachine.Router();
-			}else if(select == 3){
+			}else if(select.toLowerCase().equals("switch")){
 				EditMachine.Switch();
-			}else if(select == 4){
+			}else if(select.toLowerCase().equals("ap")){
 				EditMachine.AccessPoint();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");

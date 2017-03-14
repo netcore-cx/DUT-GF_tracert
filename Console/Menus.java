@@ -3,31 +3,31 @@ import java.util.Scanner;
 public class Menus {
 	private static Scanner cin = new Scanner(System.in);
 
-	public static int main(String title){
+	public static String main(String title){
 		System.out.println("| " + title);
 		System.out.println("|");
-		System.out.println("| 1. Ajouter une machine");
-		System.out.println("| 2. Retirer une machine");
-		System.out.println("| 3. Modifier une machine");
-		System.out.println("| 4. Lister les machines");
-		System.out.println("| 0. Quitter l'application");
+		System.out.println("| Add: Ajouter une machine");
+		System.out.println("| Remove: Retirer une machine");
+		System.out.println("| Edit: Modifier une machine");
+		System.out.println("| List: Lister les machines");
+		System.out.println("| Exit: Quitter l'application");
 		System.out.println("");
 
 		System.out.print("Choix: ");
-		return cin.nextInt();
+		return cin.nextLine();
 	}
 	
-	public static int machine(String title){
+	public static String machine(String title){
 		System.out.println("| " + title);
 		System.out.println("|");
-		System.out.println("| 1. Ordinateur");
-		System.out.println("| 2. Routeur");
-		System.out.println("| 3. Switch");
-		System.out.println("| 4. AccessPoint");
-		System.out.println("| 0. Retour");
+		System.out.println("| PC (Ordinateur)");
+		System.out.println("| Router");
+		System.out.println("| Switch");
+		System.out.println("| AP (Point d'accès)");
+		System.out.println("| Exit: Retour");
 		System.out.println("");
 		
 		System.out.print("Choix: ");
-		return cin.nextInt();
+		return cin.nextLine();
 	}
 }

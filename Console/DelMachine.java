@@ -9,9 +9,8 @@ public class DelMachine {
 		String select = cin.nextLine(); 
 		if(AlphaNum.isInt(select)){
 			if(Integer.parseInt(select) - 1 < Ordi.list.size() && Integer.parseInt(select) - 1 >= 0){
-				Ordi.list.remove(Integer.parseInt(select) - 1);
-				System.out.println("\n[MESSAGE] L'ordinateur à été reitré avec succès !");
-			}else{
+				System.out.println("\n[MESSAGE] L'ordinateur " + Ordi.list.get(Integer.parseInt(select) - 1).toString() + " à été reitré avec succès !");
+				Ordi.list.remove(Integer.parseInt(select) - 1);}else{
 				System.out.println("\n[ERREUR] Choix non valide.");
 			}
 		}else{
@@ -25,8 +24,8 @@ public class DelMachine {
 		String select = cin.nextLine(); 
 		if(AlphaNum.isInt(select)){
 			if(Integer.parseInt(select) - 1 < Router.list.size() && Integer.parseInt(select) - 1 >= 0){
+				System.out.println("\n[MESSAGE] Le routeur " + Router.list.get(Integer.parseInt(select) - 1).toString() + " à été reitré avec succès !");
 				Router.list.remove(Integer.parseInt(select) - 1);
-				System.out.println("\n[MESSAGE] Le routeur à été reitré avec succès !");
 			}else{
 				System.out.println("\n[ERREUR] Choix non valide.");
 			}
@@ -41,8 +40,8 @@ public class DelMachine {
 		String select = cin.nextLine();
 		if(AlphaNum.isInt(select)){
 			if(Integer.parseInt(select) - 1 < Switch.list.size() && Integer.parseInt(select) - 1 >= 0){
+				System.out.println("\n[MESSAGE] Le switch " + Switch.list.get(Integer.parseInt(select) - 1).toString() + " à été reitré avec succès !");
 				Switch.list.remove(Integer.parseInt(select) - 1);
-				System.out.println("\n[MESSAGE] Le switch à été reitré avec succès !");
 			}else{
 				System.out.println("\n[ERREUR] Choix non valide.");
 			}
@@ -57,8 +56,8 @@ public class DelMachine {
 		String select = cin.nextLine(); 
 		if(AlphaNum.isInt(select)){
 			if(Integer.parseInt(select) - 1 < AccessPoint.list.size() && Integer.parseInt(select) - 1 >= 0){
+				System.out.println("\n[MESSAGE] Le point d'accès " + AccessPoint.list.get(Integer.parseInt(select) - 1).toString() + " à été reitré avec succès !");
 				AccessPoint.list.remove(Integer.parseInt(select) - 1);
-				System.out.println("\n[MESSAGE] Le point d'accès à été reitré avec succès !");
 			}else{
 				System.out.println("\n[ERREUR] Choix non valide.");
 			}
