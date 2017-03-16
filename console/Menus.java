@@ -33,10 +33,10 @@ public class Menus {
 		return cin.nextLine();
 	}
 	
-	public static String editPC(String title){
+	public static String editPC(int i, String title){
 		System.out.println("| " + title);
 		System.out.println("|");
-		System.out.println("| Name: Modifier le nom de l'ordinateur");
+		System.out.println("| Name: Modifier le nom de l'ordinateur (" + PC.list.get(i).getName() + ")");
 		System.out.println("| Add: Ajouter une interface");
 		System.out.println("| Remove: Retirer une interface");
 		System.out.println("| Edit: Modifier une interface");
@@ -49,7 +49,7 @@ public class Menus {
 		return cin.nextLine();
 	}
 	
-	public static String editPCServices(String title){
+	public static String editPCServices(int i, String title){
 		System.out.println("| " + title);
 		System.out.println("|");
 		System.out.println("| Add: Ajouter un services");
@@ -63,10 +63,10 @@ public class Menus {
 		return cin.nextLine();
 	}
 	
-	public static String editRouter(String title){
+	public static String editRouter(int i, String title){
 		System.out.println("| " + title);
 		System.out.println("|");
-		System.out.println("| Name: Modifier le nom du routeur");
+		System.out.println("| Name: Modifier le nom du routeur (" + Router.list.get(i).getName() + ")");
 		System.out.println("| Add: Ajouter une interface");
 		System.out.println("| Remove: Retirer une interface");
 		System.out.println("| Edit: Modifier une interface");
@@ -78,10 +78,10 @@ public class Menus {
 		return cin.nextLine();
 	}
 	
-	public static String editSwitch(String title){
+	public static String editSwitch(int i, String title){
 		System.out.println("| " + title);
 		System.out.println("|");
-		System.out.println("| Name: Modifier le nom du switch");
+		System.out.println("| Name: Modifier le nom du switch (" + Switch.list.get(i).getName() + ")");
 		System.out.println("| Add: Ajouter une interface");
 		System.out.println("| Remove: Retirer une interface");
 		System.out.println("| Edit: Modifier une interface");
