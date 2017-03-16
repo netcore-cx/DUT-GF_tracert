@@ -1,9 +1,10 @@
+package interfaces;
 import java.util.ArrayList;
 
 public class InterfaceMac {
 	public static final String MAC="0000.0000.0000";
 	public static final String NAME="Interface";
-	static ArrayList<InterfaceMac> list = new ArrayList<InterfaceMac>();
+	public static ArrayList<InterfaceMac> list = new ArrayList<InterfaceMac>();
 	private String name;
 	private String mac;
 	

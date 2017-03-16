@@ -1,46 +1,54 @@
+package machines;
 import java.util.ArrayList;
 
-public class Router extends Machine{
+import interfaces.InterfaceMac;
 
-  static ArrayList<Router> list = new ArrayList<Router>(); 
+public class Switch extends Machine{
 	
-  private ArrayList<InterfaceActive> interfaceList;
+  public static ArrayList<Switch> list = new ArrayList<Switch>();
+	
+  private ArrayList<InterfaceMac> interfaceList;
 
-	//*******************
+
+  //*******************
   //** Constructeurs **
   //*******************
-  public Router(){
+  public Switch(){
     super();
-    interfaceList = new ArrayList<InterfaceActive>();
-    list.add(this);
-  }
-  public Router(String newName){
-    super(newName);
-    interfaceList = new ArrayList<InterfaceActive>();
+    interfaceList = new ArrayList<InterfaceMac>();
     list.add(this);
   }
 
-	//********************
+  public Switch(String newName){
+    super(newName);
+    interfaceList = new ArrayList<InterfaceMac>();
+    list.add(this);
+  }
+
+  //********************
   //***** Mutateur *****
   //********************
-  public void setInterfaceList(ArrayList<InterfaceActive> newInterfaceList){
+  public void setInterfaceList(ArrayList<InterfaceMac> newInterfaceList){
 	  this.interfaceList = newInterfaceList;
   }
 
-  public void addInterface(InterfaceActive newInterfaceActive){
-	  interfaceList.add(newInterfaceActive);
+  public void addInterface(InterfaceMac newInterface){
+	  interfaceList.add(newInterface);
   }
-  public void setRoutersList(ArrayList<Router> routerList){
-	  Router.list = routerList;
+  
+  public void setSwitchsList(ArrayList<Switch> switchsList){
+	  Switch.list = switchsList;
   }
 
-	//*******************
+
+  //*******************
   //***** Lecture *****
   //*******************
-  public ArrayList<InterfaceActive> getInterfaceList(){
+  public ArrayList<InterfaceMac> getInterfaceList(){
 	  return interfaceList;
   }
-  public ArrayList<Router> getRoutersList(){
+  
+  public ArrayList<Switch> getSwitchsList(){
 	  return list;
   }
   

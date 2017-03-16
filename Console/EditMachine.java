@@ -1,15 +1,15 @@
 import java.util.Scanner;
+import machines.*;
 
 public class EditMachine {
 	private static Scanner cin = new Scanner(System.in);
 	
 	public static void Ordi(){
 		int select = cin.nextInt();
-		System.out.println(Ordi.listToString());
-		System.out.print("Supprimer l'ordinateur numéro: ");
+		System.out.println(PC.listToString());
+		System.out.print("Editer l'ordinateur numéro: ");
 		select = cin.nextInt();
-		Ordi.list.remove(select + 1);
-		System.out.println("[MESSAGE] L'ordinateur à été reitré avec succès !");
+		EditPC.edit(PC.list.get(select + 1));
 	}
 	
 	public static void Router(){
@@ -32,10 +32,10 @@ public class EditMachine {
 	
 	public static void AccessPoint(){
 		int select = cin.nextInt();
-		System.out.println(AccessPoint.listToString());
+		System.out.println(AP.listToString());
 		System.out.print("Supprimer le point d'accès numéro: ");
 		select = cin.nextInt();
-		AccessPoint.list.remove(select + 1);
+		AP.list.remove(select + 1);
 		System.out.println("[MESSAGE] Le point d'accès à été reitré avec succès !");
 	}
 }

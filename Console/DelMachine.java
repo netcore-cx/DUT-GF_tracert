@@ -1,16 +1,20 @@
 import java.util.Scanner;
+import machines.*;
+
+import machines.Router;
+import machines.Switch;
 
 public class DelMachine {
 	private static Scanner cin = new Scanner(System.in);
 	 
 	public static void Ordi(){
-		System.out.println(Ordi.listToString());
+		System.out.println(PC.listToString());
 		System.out.print("\nSupprimer l'ordinateur numéro: ");
 		String select = cin.nextLine(); 
 		if(AlphaNum.isInt(select)){
-			if(Integer.parseInt(select) - 1 < Ordi.list.size() && Integer.parseInt(select) - 1 >= 0){
-				System.out.println("\n[MESSAGE] L'ordinateur " + Ordi.list.get(Integer.parseInt(select) - 1).toString() + " à été reitré avec succès !");
-				Ordi.list.remove(Integer.parseInt(select) - 1);}else{
+			if(Integer.parseInt(select) - 1 < PC.list.size() && Integer.parseInt(select) - 1 >= 0){
+				System.out.println("\n[MESSAGE] L'ordinateur " + PC.list.get(Integer.parseInt(select) - 1).toString() + " à été reitré avec succès !");
+				PC.list.remove(Integer.parseInt(select) - 1);}else{
 				System.out.println("\n[ERREUR] Choix non valide.");
 			}
 		}else{
@@ -51,13 +55,13 @@ public class DelMachine {
 	}
 	
 	public static void AccessPoint(){
-		System.out.println(AccessPoint.listToString());
+		System.out.println(AP.listToString());
 		System.out.print("\nSupprimer le point d'accès numéro: ");
 		String select = cin.nextLine(); 
 		if(AlphaNum.isInt(select)){
-			if(Integer.parseInt(select) - 1 < AccessPoint.list.size() && Integer.parseInt(select) - 1 >= 0){
-				System.out.println("\n[MESSAGE] Le point d'accès " + AccessPoint.list.get(Integer.parseInt(select) - 1).toString() + " à été reitré avec succès !");
-				AccessPoint.list.remove(Integer.parseInt(select) - 1);
+			if(Integer.parseInt(select) - 1 < AP.list.size() && Integer.parseInt(select) - 1 >= 0){
+				System.out.println("\n[MESSAGE] Le point d'accès " + AP.list.get(Integer.parseInt(select) - 1).toString() + " à été reitré avec succès !");
+				AP.list.remove(Integer.parseInt(select) - 1);
 			}else{
 				System.out.println("\n[ERREUR] Choix non valide.");
 			}

@@ -1,3 +1,7 @@
+import machines.Router;
+import machines.Switch;
+import machines.*;
+
 public class ConsoleMain {
 	public static void main(String[] args){
 		String select;
@@ -29,13 +33,13 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("pc")){
-				AddMachine.Ordi();
+				AddMachine.PC();
 			}else if(select.toLowerCase().equals("router")){
 				AddMachine.Router();
 			}else if(select.toLowerCase().equals("switch")){
 				AddMachine.Switch();
 			}else if(select.toLowerCase().equals("ap")){
-				AddMachine.AccessPoint();
+				AddMachine.AP();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}
@@ -76,13 +80,13 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("pc")){
-				System.out.println(Ordi.listToString());
+				System.out.println(PC.listToString());
 			}else if(select.toLowerCase().equals("router")){
 				System.out.println(Router.listToString());
 			}else if(select.toLowerCase().equals("router")){
 				System.out.println(Switch.listToString());
 			}else if(select.toLowerCase().equals("ap")){
-				System.out.println(AccessPoint.listToString());
+				System.out.println(AP.listToString());
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}

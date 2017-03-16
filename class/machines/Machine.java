@@ -1,3 +1,4 @@
+package machines;
 import java.util.ArrayList;
 
 public class Machine {

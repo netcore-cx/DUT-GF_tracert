@@ -1,13 +1,17 @@
 import java.util.Scanner;
+import machines.*;
+
+import machines.Router;
+import machines.Switch;
 
 public class AddMachine {
 	private static Scanner cin = new Scanner(System.in);
 	
-	public static Ordi Ordi(){
+	public static PC PC(){
 		System.out.print("Nom: ");
 		String name = cin.nextLine();
 		System.out.println("\n[MESSAGE] L'ordinateur " + name + " à été ajouté avec succès !\n");
-		return new Ordi(name);
+		return new PC(name);
 	}
 	
 	public static Router Router(){
@@ -24,7 +28,7 @@ public class AddMachine {
 		return new Switch(name);
 	}
 	
-	public static AccessPoint AccessPoint(){
+	public static AP AP(){
 		System.out.print("Nom: ");
 		String name = cin.nextLine();
 		System.out.println("");
@@ -34,6 +38,6 @@ public class AddMachine {
 		System.out.print("Clé: ");
 		String key = cin.nextLine();
 		System.out.println("\n[MESSAGE] Le point d'accès " + name + " à été ajouté avec succès !\n");
-		return new AccessPoint(name, ssid, key);
+		return new AP(name, ssid, key);
 	}
 }

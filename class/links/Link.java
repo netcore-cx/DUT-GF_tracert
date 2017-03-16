@@ -1,8 +1,9 @@
+package links;
 import java.util.ArrayList;
 
 public class Link{
   static final String DEFAULT_MAC = "0000.0000.0000.0000"; 
-  static ArrayList<Link> list = new ArrayList<Link>();
+  public static ArrayList<Link> list = new ArrayList<Link>();
   private String link1;
   private String link2;
   

@@ -1,51 +1,49 @@
+package machines;
 import java.util.ArrayList;
 
-public class Switch extends Machine{
-	
-  static ArrayList<Switch> list = new ArrayList<Switch>();
-	
-  private ArrayList<InterfaceMac> interfaceList;
+import interfaces.InterfaceIP;
 
+public class Router extends Machine{
 
-  //*******************
+  public static ArrayList<Router> list = new ArrayList<Router>(); 
+	
+  private ArrayList<InterfaceIP> interfaceList;
+
+	//*******************
   //** Constructeurs **
   //*******************
-  public Switch(){
+  public Router(){
     super();
-    interfaceList = new ArrayList<InterfaceMac>();
+    interfaceList = new ArrayList<InterfaceIP>();
     list.add(this);
   }
-
-  public Switch(String newName){
+  public Router(String newName){
     super(newName);
-    interfaceList = new ArrayList<InterfaceMac>();
+    interfaceList = new ArrayList<InterfaceIP>();
     list.add(this);
   }
 
-  //********************
+	//********************
   //***** Mutateur *****
   //********************
-  public void setInterfaceList(ArrayList<InterfaceMac> newInterfaceList){
+  public void setInterfaceList(ArrayList<InterfaceIP> newInterfaceList){
 	  this.interfaceList = newInterfaceList;
   }
 
-  public void addInterface(InterfaceMac newInterface){
-	  interfaceList.add(newInterface);
+  public void addInterface(InterfaceIP interfaceIP){
+	  interfaceList.add(interfaceIP);
   }
-  
-  public void setSwitchsList(ArrayList<Switch> switchsList){
-	  Switch.list = switchsList;
+  public void setRoutersList(ArrayList<Router> routerList){
+	  Router.list = routerList;
   }
 
-
-  //*******************
+	//*******************
   //***** Lecture *****
   //*******************
-  public ArrayList<InterfaceMac> getInterfaceList(){
+  public ArrayList<InterfaceIP> getInterfaceList(){
 	  return interfaceList;
   }
-  
-  public ArrayList<Switch> getSwitchsList(){
+  public ArrayList<Router> getRoutersList(){
 	  return list;
   }
   
