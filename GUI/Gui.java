@@ -1,16 +1,20 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
 public class Gui {
+	static int x, y;
 
 	private JFrame frame;
 
@@ -42,6 +46,7 @@ public class Gui {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setLocationRelativeTo(null);
 		frame.setBounds(100, 100, 652, 600);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,29 +78,25 @@ public class Gui {
 		JPanel panel = new JPanel();
 		JButton button = new JButton("pc");
 		panel.setBounds(12, 99, 628, 449);
-		//panel.setBackground(Color.GRAY);
+		panel.setBackground(Color.GRAY);
 		panel.add(button);
+		//panel.setLayout(null);
 		
 		//TRES IMPORTANT
 		button.addMouseListener(new MouseAdapter(){
-			boolean move;
 			@Override
-			public void mouseClicked(MouseEvent e){
-				if (move){
-					move=false;
-				}
-				else{
-					move=true;
-				}
+			public void mousePressed(MouseEvent e){
+				//Récupère la position du button
+				x = e.getX();
+				y = e.getY();
 			}
-			//Déplacement des buttons
-			@Override
-            public void mouseMoved(MouseEvent e) {
-				if(move){
-					button.setLocation(200 ,100);
-				}
-            }
 		});
+		button.addMouseMotionListener(new MouseMotionAdapter(){
+            public void mouseDragged(MouseEvent e){
+            	//Déplace le button
+                button.setLocation(e.getX() - x + button.getLocation().x, e.getY() - y + button.getLocation().y);
+            }
+        });
 		layeredPane.add(panel);
 	}
 
