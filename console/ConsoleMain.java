@@ -1,6 +1,6 @@
-import machines.Router;
-import machines.Switch;
 import machines.*;
+import machines.Switch;
+import machines.Router;
 
 public class ConsoleMain {
 	public static void main(String[] args){
@@ -12,18 +12,18 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("add")){
-				addMachines();
+//				addMachines();
 			}else if(select.toLowerCase().equals("remove")){
 				removeMachines();
 			}else if(select.toLowerCase().equals("edit")){
-				editMachines();
+//				editMachines();
 			}else if(select.toLowerCase().equals("list")){
 				listMachines();
 			}
 		}
 	}
 	
-	public static void addMachines(){
+/*	public static void addMachines(){
 		String select;
 		boolean stop = false;
 		while(!stop){
@@ -44,7 +44,7 @@ public class ConsoleMain {
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}
 		}
-	}
+	}*/
 	
 	public static void removeMachines(){
 		String select;
@@ -94,7 +94,7 @@ public class ConsoleMain {
 		}
 	}
 	
-	public static void editMachines(){
+/*	public static void editMachines(){
 		String select;
 		boolean stop = false;
 		while(!stop){
@@ -116,5 +116,5 @@ public class ConsoleMain {
 			}
 			System.out.println("");
 		}
-	}
+	}*/
 }

@@ -6,6 +6,7 @@ public class MainFrame{
     		  @Override
     		  public void run(){
     	          Frame fenetre = new Frame("GF_TraceRT");
+    	          fenetre.setVisible(true);
     		  }
     	  });
       }

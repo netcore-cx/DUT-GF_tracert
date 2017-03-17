@@ -41,8 +41,6 @@ public class Frame extends JFrame {
 	  //On positionne la case de départ du composant
 	  gbc.gridx = 0;
 	  gbc.gridy = 0;
-	  
-	  
 	  //Cette instruction informe le layout que c'est une fin de ligne
 	  gbc.gridwidth = GridBagConstraints.REMAINDER;
 	  //La taille en hauteur et en largeur
@@ -54,15 +52,15 @@ public class Frame extends JFrame {
 	  content.add(new Panel("PC"), gbc);
 	  
 	  JPanel cell1 = new JPanel();
-	  cell1.setPreferredSize(new Dimension(800, 800));
-	  cell1.add(new MoveComponents());
+	  cell1.setBounds(12, 102, 628, 436);
+	  cell1.setLayout(null);
+	  cell1.setBackground(Color.GRAY);
 	  
 	  gbc.gridx = 0;
 	  gbc.gridy = 1;
 	  gbc.gridwidth = GridBagConstraints.REMAINDER;;
 	  gbc.gridheight = 1;
 	  gbc.anchor = GridBagConstraints.PAGE_START;
-	  
 	  gbc.weightx = 1.;
 	  gbc.weighty = 1.;
 	  
@@ -77,36 +75,6 @@ public class Frame extends JFrame {
 	  
 
 	  getContentPane().add(content);
-	  
-	  
-	//add(new Panel());
-	  
-	  
-//On crée un ligne
-	  
-	  /*
-	   b1.setLayout(new BoxLayout(b1, BoxLayout.LINE_AXIS));
-	  //Ajoute les composant à cette ligne
-	  b1.add(new Panel("PC"));
-	  
-	  //On Crée une autre Ligne
-	  b2.setLayout(new BoxLayout(b2, BoxLayout.LINE_AXIS));
-	  //On ajoute des composants dans cette ligne
-	  b2.add(new MoveComponents());
-	  
-	  
-	  JPanel b4 = new JPanel();
-	  //On positionne maintenant ces trois lignes en colonne
-	  b4.setLayout(new BoxLayout(b4, BoxLayout.PAGE_AXIS));
-	  b4.add(b1);
-	  b4.add(b2);
-	  
-	  */
-	  
-	  
-	  
-	  
-	  
       }
       
 }
