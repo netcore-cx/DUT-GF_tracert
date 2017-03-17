@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import machines.*;
-import interfaces.*;
 
 public class Menus {
 	private static Scanner cin = new Scanner(System.in);
@@ -108,5 +107,9 @@ public class Menus {
 		
 		System.out.print("Choix: ");
 		return cin.nextLine();
+	}
+	
+	public static int selectPC(String title){
+		return 0;
 	}
 }

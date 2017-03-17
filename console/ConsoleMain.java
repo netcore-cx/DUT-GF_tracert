@@ -16,7 +16,7 @@ public class ConsoleMain {
 			}else if(select.toLowerCase().equals("remove")){
 				removeMachines();
 			}else if(select.toLowerCase().equals("edit")){
-				//editMachines();
+				editMachines();
 			}else if(select.toLowerCase().equals("list")){
 				listMachines();
 			}
@@ -104,7 +104,7 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("pc")){
-				EditMachine.Ordi();
+				EditMachine.PC();
 			}else if(select.toLowerCase().equals("router")){
 				EditMachine.Router();
 			}else if(select.toLowerCase().equals("switch")){
