@@ -104,7 +104,7 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("pc")){
-				EditMachine.PC();
+				EditPC.global();
 			}else if(select.toLowerCase().equals("router")){
 				EditMachine.Router();
 			}else if(select.toLowerCase().equals("switch")){

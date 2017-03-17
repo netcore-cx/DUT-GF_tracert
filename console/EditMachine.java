@@ -4,13 +4,6 @@ import machines.*;
 public class EditMachine {
 	private static Scanner cin = new Scanner(System.in);
 	
-	public static void PC(){
-		System.out.println(PC.listToString());
-		System.out.print("Editer l'ordinateur numéro: ");
-		int select = cin.nextInt();
-		EditPC.global(select - 1);
-	}
-	
 	public static void Router(){
 		System.out.println(Router.listToString());
 		System.out.print("Supprimer le routeur numéro: ");

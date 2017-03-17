@@ -110,6 +110,19 @@ public class Menus {
 	}
 	
 	public static int selectPC(String title){
-		return 0;
+		int select = 0;
+		boolean stop = false;
+		while(stop == false){
+			System.out.println(title + "\n");
+			System.out.println(PC.listToString() + "\n\n0. Annuler\n");
+			System.out.print("Séléctionner l'ordinateur numéro: ");
+			select = cin.nextInt();
+			if(select == 0 || (select > 0 && select < PC.list.size())){
+				stop = true;
+			}else{
+				System.out.print("[Erreur] Choix invalide.");
+			}
+		}
+		return select;
 	}
 }
