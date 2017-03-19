@@ -33,13 +33,13 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("pc")){
-				AddMachine.PC();
+				Add.PC();
 			}else if(select.toLowerCase().equals("router")){
-				AddMachine.Router();
+				Add.Router();
 			}else if(select.toLowerCase().equals("switch")){
-				AddMachine.Switch();
+				Add.Switch();
 			}else if(select.toLowerCase().equals("ap")){
-				AddMachine.AP();
+				Add.AP();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}
@@ -104,13 +104,13 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("pc")){
-				EditPC.global();
+				Edit.PC();
 			}else if(select.toLowerCase().equals("router")){
-				EditMachine.Router();
+				//Edit.Router();
 			}else if(select.toLowerCase().equals("switch")){
-				EditMachine.Switch();
+				//Edit.Switch();
 			}else if(select.toLowerCase().equals("ap")){
-				EditMachine.AccessPoint();
+				//Edit.AccessPoint();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}
