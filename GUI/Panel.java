@@ -1,10 +1,5 @@
 import javax.swing.JButton;
 import javax.swing.JPanel;
-
-import java.awt.event.KeyEvent;
-
-import javax.swing.AbstractButton;
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 
 public class Panel extends JPanel {
