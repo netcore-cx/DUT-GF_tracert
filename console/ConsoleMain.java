@@ -12,7 +12,7 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("add")){
-//				addMachines();
+				Add.machines();
 			}else if(select.toLowerCase().equals("remove")){
 				removeMachines();
 			}else if(select.toLowerCase().equals("edit")){
@@ -22,29 +22,6 @@ public class ConsoleMain {
 			}
 		}
 	}
-	
-/*	public static void addMachines(){
-		String select;
-		boolean stop = false;
-		while(!stop){
-			select = Menus.machine("MENU PRINCIPAL > AJOUTER UNE MACHINE >");
-			System.out.println("");
-			
-			if(select.toLowerCase().equals("exit")){
-				stop = true;
-			}else if(select.toLowerCase().equals("pc")){
-				Add.PC();
-			}else if(select.toLowerCase().equals("router")){
-				Add.Router();
-			}else if(select.toLowerCase().equals("switch")){
-				Add.Switch();
-			}else if(select.toLowerCase().equals("ap")){
-				Add.AP();
-			}else{
-				System.out.println("[ERREUR] Votre choix est incorrecte");
-			}
-		}
-	}*/
 	
 	public static void removeMachines(){
 		String select;
@@ -93,28 +70,4 @@ public class ConsoleMain {
 			System.out.println("");
 		}
 	}
-	
-/*	public static void editMachines(){
-		String select;
-		boolean stop = false;
-		while(!stop){
-			select = Menus.machine("MENU PRINCIPAL > EDITER UNE MACHINE >");
-			System.out.println("");
-			
-			if(select.toLowerCase().equals("exit")){
-				stop = true;
-			}else if(select.toLowerCase().equals("pc")){
-				Edit.PC();
-			}else if(select.toLowerCase().equals("router")){
-				//Edit.Router();
-			}else if(select.toLowerCase().equals("switch")){
-				//Edit.Switch();
-			}else if(select.toLowerCase().equals("ap")){
-				//Edit.AccessPoint();
-			}else{
-				System.out.println("[ERREUR] Votre choix est incorrecte");
-			}
-			System.out.println("");
-		}
-	}*/
 }

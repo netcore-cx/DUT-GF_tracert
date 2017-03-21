@@ -1,7 +1,6 @@
 package machines;
 import java.util.ArrayList;
-
-import interfaces.InterfaceMac;
+import interfaces.*;
 
 public class AP extends Machine{
 

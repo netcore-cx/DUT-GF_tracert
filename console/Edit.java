@@ -2,6 +2,30 @@ import machines.*;
 
 public class Edit {
 	
+	public static void editMachines(){
+		String select;
+		boolean stop = false;
+		while(!stop){
+			select = Menus.machine("MENU PRINCIPAL > EDITER UNE MACHINE >");
+			System.out.println("");
+			
+			if(select.toLowerCase().equals("exit")){
+				stop = true;
+			}else if(select.toLowerCase().equals("pc")){
+				Edit.PC();
+			}else if(select.toLowerCase().equals("router")){
+				//Edit.Router();
+			}else if(select.toLowerCase().equals("switch")){
+				//Edit.Switch();
+			}else if(select.toLowerCase().equals("ap")){
+				//Edit.AccessPoint();
+			}else{
+				System.out.println("[ERREUR] Votre choix est incorrecte");
+			}
+			System.out.println("");
+		}
+	}
+	
 	public static void PC(){
 		int i = Menus.selectPC("MENU PRINCIPAL > EDITER UNE MACHINE > PC >");
 		if(i != 0){

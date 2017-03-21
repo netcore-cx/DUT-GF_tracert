@@ -2,7 +2,30 @@ import java.util.Scanner;
 import machines.*;
 
 public class Add {
-private static Scanner cin = new Scanner(System.in);
+	private static Scanner cin = new Scanner(System.in);
+
+	public static void machines(){
+		String select;
+		boolean stop = false;
+		while(!stop){
+			select = Menus.machine("MENU PRINCIPAL > AJOUTER UNE MACHINE >");
+			System.out.println("");
+			
+			if(select.toLowerCase().equals("exit")){
+				stop = true;
+			}else if(select.toLowerCase().equals("pc")){
+				Add.PC();
+			}else if(select.toLowerCase().equals("router")){
+				Add.Router();
+			}else if(select.toLowerCase().equals("switch")){
+				Add.Switch();
+			}else if(select.toLowerCase().equals("ap")){
+				Add.AP();
+			}else{
+				System.out.println("[ERREUR] Votre choix est incorrecte");
+			}
+		}
+	}
 	
 	public static PC PC(){
 		System.out.print("Nom: ");
