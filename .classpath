@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="class"/>
 	<classpathentry kind="src" path="GUI"/>
 	<classpathentry kind="src" path="res"/>
-	<classpathentry kind="src" path="Console"/>
 	<classpathentry kind="src" path="tools"/>
 	<classpathentry kind="src" path="console"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>

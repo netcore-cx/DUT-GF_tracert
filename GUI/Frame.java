@@ -1,5 +1,7 @@
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import java.awt.GridBagLayout;
@@ -9,72 +11,89 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
-public class Frame extends JFrame {
+public class Frame extends JFrame implements ActionListener{
 	
 	private static final long serialVersionUID = 1L;
+	int y,x;
+	
+	JLayeredPane layeredPane;
+	JButton btnAp;
+	JButton btnSwitch;
+	JButton btnRouter;
+	JButton btnPC;
+	JPanel panel;
+	JButton button;
+	
   
   public Frame(String title){
 	  //Titre
 	  setTitle(title);
-	  setSize(600, 400); //Resolution
+	  setSize(650, 600); //Resolution
 	  setIconImage(new ImageIcon("res/icon/icon.png").getImage()); //Icon du programme
 	  setLocationRelativeTo(null); //Affiche la fenetre au mileu
 	  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //kill le processus
 	  setVisible(true);
 	  
-	  //Création de deux Objet panel qui sont en faite des JPanel
-	  Panel b1 = new Panel();
-	  Panel b2 = new Panel();
-	   
-	  //Le conteneur principal
-	  JPanel content = new JPanel();
-	  //content.setPreferredSize(new Dimension(800, 800));
+	  layeredPane = new JLayeredPane();
+	  getContentPane().add(layeredPane);
 	  
-	  //On définit le layout manager
-	  content.setLayout(new GridBagLayout());
-	  content.setBackground(Color.WHITE);
+	  //Ajout du boutton AP
+	  btnAp = new JButton("ap");
+	  btnAp.setIcon(new ImageIcon("res/icon/ap_blue_64x64.png"));
+	  btnAp.setBounds(12, 20, 148, 70);
+	  layeredPane.add(btnAp);
 	  
-	  //L'objet servant à positionner les composants
-	  GridBagConstraints gbc = new GridBagConstraints();
+	//Ajout du boutton Switch
+	  btnSwitch = new JButton("switch");
+	  btnSwitch.setIcon(new ImageIcon("res/icon/switch_bleu_64x64.png"));
+	  btnSwitch.setBounds(172, 20, 148, 70);
+	  layeredPane.add(btnSwitch);
 	  
-	  //On positionne la case de départ du composant
-	  gbc.gridx = 0;
-	  gbc.gridy = 0;
-	  //Cette instruction informe le layout que c'est une fin de ligne
-	  gbc.gridwidth = GridBagConstraints.REMAINDER;
-	  //La taille en hauteur et en largeur
-	  gbc.gridheight = 1;
+	//Ajout du boutton router
+	  btnRouter = new JButton("router");
+	  btnRouter.setIcon(new ImageIcon("res/icon/router_blue_64x64.png"));
+	  btnRouter.setBounds(332, 20, 148, 70);
+	  layeredPane.add(btnRouter);
 	  
-	  //Position en haut centre
-	  gbc.anchor = GridBagConstraints.PAGE_START;
-	  //gbc.gridwidth = 4;
-	  content.add(new Panel("PC"), gbc);
+	//Ajout du boutton PC
+	  btnPC = new JButton("PC");
+	  btnPC.setIcon(new ImageIcon("res/icon/terminal_blue_64x64.png"));
+	  btnPC.setBounds(492, 20, 148, 70);
+	  layeredPane.add(btnPC);
+		
+	  //Ajout de la zone de déplacement des JButton
+	  panel = new JPanel();
+	  panel.setBounds(12, 99, 628, 449);
+	  panel.setBackground(Color.GRAY);
+	  layeredPane.add(panel);
 	  
-	  JPanel cell1 = new JPanel();
-	  cell1.setBounds(12, 102, 628, 436);
-	  cell1.setLayout(null);
-	  cell1.setBackground(Color.GRAY);
-	  
-	  gbc.gridx = 0;
-	  gbc.gridy = 1;
-	  gbc.gridwidth = GridBagConstraints.REMAINDER;;
-	  gbc.gridheight = 1;
-	  gbc.anchor = GridBagConstraints.PAGE_START;
-	  gbc.weightx = 1.;
-	  gbc.weighty = 1.;
-	  
-	  /* Marge à gauche de 15 (gardons la même que précédemment)
-	   * Marge au dessus de 30 et
-	   * Marge à droite de 10. */
-	  gbc.insets = new Insets(15, 15, 0, 10);
-	  
-	  //Celle-ci indique que la cellule se réplique de façon verticale
-	  content.add(cell1, gbc);
+	  //Action
+	  btnRouter.addActionListener(this);
+	  btnSwitch.addActionListener(this);
+	  btnAp.addActionListener(this);
+	  btnPC.addActionListener(this);
 	  
 	  
-
-	  getContentPane().add(content);
-      }
-      
+	  }
+  
+  
+  public void actionPerformed(ActionEvent e){
+	  if(e.getSource() == btnRouter ){
+		  AddButtonRouter rr =new AddButtonRouter();
+		  panel.add(rr.getButton());
+		  panel.repaint();
+		  panel.revalidate();
+		}
+	  if(e.getSource() == btnSwitch){
+		  
+	  }
+	}
+  
+     
 }

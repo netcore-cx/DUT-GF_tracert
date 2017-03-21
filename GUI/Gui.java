@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
@@ -8,12 +7,14 @@ import java.awt.event.MouseMotionAdapter;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-public class Gui {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Gui extends JFrame implements ActionListener{
 	static int x, y;
 
 	private JFrame frame;
@@ -44,7 +45,7 @@ public class Gui {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setLocationRelativeTo(null);
 		frame.setBounds(100, 100, 652, 600);
@@ -56,22 +57,22 @@ public class Gui {
 		frame.getContentPane().add(layeredPane);
 
 		JButton btnAp = new JButton("ap");
-		btnAp.setIcon(new ImageIcon("res/icon/ap_64x64.png"));
+		btnAp.setIcon(new ImageIcon("res/icon/ap_blue_64x64.png"));
 		btnAp.setBounds(12, 20, 148, 70);
 		layeredPane.add(btnAp);
 
 		JButton btnSwitch = new JButton("switch");
-		btnSwitch.setIcon(new ImageIcon("res/icon/switch_64x64.png"));
+		btnSwitch.setIcon(new ImageIcon("res/icon/switch_bleu_64x64.png"));
 		btnSwitch.setBounds(172, 20, 148, 70);
 		layeredPane.add(btnSwitch);
 
 		JButton btnRouter = new JButton("router");
-		btnRouter.setIcon(new ImageIcon("res/icon/router_64x64.png"));
+		btnRouter.setIcon(new ImageIcon("res/icon/router_blue_64x64.png"));
 		btnRouter.setBounds(332, 20, 148, 70);
 		layeredPane.add(btnRouter);
 
 		JButton btnPC = new JButton("PC");
-		btnPC.setIcon(new ImageIcon("res/icon/terminal_64x64.png"));
+		btnPC.setIcon(new ImageIcon("res/icon/terminal_blue_64x64.png"));
 		btnPC.setBounds(492, 20, 148, 70);
 		layeredPane.add(btnPC);
 		
@@ -98,6 +99,12 @@ public class Gui {
             }
         });
 		layeredPane.add(panel);
+		btnRouter.addActionListener(this);
 	}
-
-}
+	
+	public void actionPerformed(ActionEvent e){
+			
+		}
+	}
+	
+	
