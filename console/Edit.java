@@ -2,7 +2,7 @@ import machines.*;
 
 public class Edit {
 	
-	public static void editMachines(){
+	public static void machines(){
 		String select;
 		boolean stop = false;
 		while(!stop){
@@ -32,7 +32,7 @@ public class Edit {
 			String select;
 			boolean stop = false;
 			while(!stop){
-				select = Menus.editPC(i, "MENU PRINCIPAL > EDITER UNE MACHINE > PC > " + PC.list.get(i).getName());
+				select = Menus.editPC(i, "MENU PRINCIPAL > EDITER UNE MACHINE > PC > " + PC.list.get(i-1).getName());
 				System.out.println("");
 				if(select.toLowerCase().equals("exit")){
 					stop = true;

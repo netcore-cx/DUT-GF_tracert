@@ -5,7 +5,7 @@ public class AlphaNum {
 	{  
 	  try  
 	  {  
-	    int d = Integer.parseInt(str);  
+	    Integer.parseInt(str);  
 	  }  
 	  catch(NumberFormatException nfe)  
 	  {  
@@ -18,7 +18,7 @@ public class AlphaNum {
 	{  
 	  try  
 	  {  
-	    double d = Double.parseDouble(str);  
+	    Double.parseDouble(str);  
 	  }  
 	  catch(NumberFormatException nfe)  
 	  {  

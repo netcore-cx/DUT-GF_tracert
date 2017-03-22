@@ -16,7 +16,7 @@ public class ConsoleMain {
 			}else if(select.toLowerCase().equals("remove")){
 				removeMachines();
 			}else if(select.toLowerCase().equals("edit")){
-//				editMachines();
+				Edit.machines();
 			}else if(select.toLowerCase().equals("list")){
 				listMachines();
 			}
