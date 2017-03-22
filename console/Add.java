@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import machines.*;
+import interfaces.*;
 
 public class Add {
 	private static Scanner cin = new Scanner(System.in);
@@ -59,5 +60,53 @@ public class Add {
 		String key = cin.nextLine();
 		System.out.println("\n[MESSAGE] Le point d'accès " + name + " à été ajouté avec succès !\n");
 		return new AP(name, ssid, key);
+	}
+	
+	public static InterfaceMac interfaceMac(){
+		System.out.print("Nom: ");
+		String name = cin.nextLine();
+		System.out.println("");
+		System.out.print("Adresse MAC: ");
+		String mac = cin.nextLine();
+		System.out.println("");
+		return new InterfaceMac(name, mac);
+	}
+	
+	public static InterfaceIP interfaceIP(){
+		System.out.print("Nom: ");
+		String name = cin.nextLine();
+		System.out.println("");
+		System.out.print("Adresse MAC: ");
+		String mac = cin.nextLine();
+		System.out.println("");
+		System.out.print("Adresse IP: ");
+		String ip = cin.nextLine();
+		System.out.println("");
+		System.out.print("Mask: ");
+		String mask = cin.nextLine();
+		System.out.println("");
+		return new InterfaceIP(name, mac, ip, mask);
+	}
+	
+	public static InterfacePC interfacePC(){
+		System.out.print("Nom: ");
+		String name = cin.nextLine();
+		System.out.println("");
+		System.out.print("Adresse MAC: ");
+		String mac = cin.nextLine();
+		System.out.println("");
+		System.out.print("Adresse IP: ");
+		String ip = cin.nextLine();
+		System.out.println("");
+		System.out.print("Mask: ");
+		String mask = cin.nextLine();
+		System.out.println("");
+		System.out.print("Adresse IP de la passerelle: ");
+		String addrPass = cin.nextLine();
+		System.out.println("");
+		System.out.print("Adresse IP du serveur DNS: ");
+		String addrDNS = cin.nextLine();
+		System.out.println("");
+		return new InterfacePC(name, mac, ip, mask, addrPass, addrDNS);
 	}
 }
