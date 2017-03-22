@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -9,22 +8,23 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import machines.Router;
+import machines.Switch;
 
-public class AddButtonRouter{
-	
-	private Router router;
-	private int id;
-	private JButton button;
-	private JLabel label;
+public class AddButtonSwitch {
 	static int cpt;
-	int y,x;
 	
-	public AddButtonRouter(){
-		this.router = new Router();
+	private int id;
+	private Switch switcH;
+	private JLabel label;
+	int x,y;
+	
+	public AddButtonSwitch(){
 		this.id = cpt;
+		this.switcH = new Switch();
 		cpt = cpt +1;
-		this.label = new JLabel("Router "+this.id);
-		this.label.setIcon((new ImageIcon("res/icon/router_blue_64x64.png")));
+		
+		this.label = new JLabel("Switch "+this.id);
+		this.label.setIcon((new ImageIcon("res/icon/switch_blue_64x64.png")));
 		this.label.setVerticalTextPosition(AbstractButton.BOTTOM);
 		this.label.setHorizontalTextPosition(AbstractButton.CENTER);
 		this.label.setBounds(29, 9, 64, 80);
@@ -44,16 +44,14 @@ public class AddButtonRouter{
 				}
 			});
 	}
-	public JButton getButton(){
-		return button;
-	}
 	public JLabel getLabel(){
 		return label;
 	}
-	public Router getRouter(){
-		return router;
+	public Switch getRouter(){
+		return switcH;
 	}
 	public int getId(){
 		return id;
 	}
+	
 }

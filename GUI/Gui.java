@@ -78,8 +78,10 @@ public class Gui extends JFrame implements ActionListener{
 		
 		JPanel panel = new JPanel();
 		JButton button = new JButton("pc");
+		button.setBounds(289, 5, 50, 25);
 		panel.setBounds(12, 99, 628, 449);
 		panel.setBackground(Color.GRAY);
+		panel.setLayout(null);
 		panel.add(button);
 		//panel.setLayout(null);
 		

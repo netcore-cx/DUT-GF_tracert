@@ -5,22 +5,19 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import java.awt.GridBagLayout;
+import java.util.ArrayList;
 
 
 import java.awt.Dimension;
 import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 
 public class Frame extends JFrame implements ActionListener{
+	public ArrayList<AddButtonRouter> router;
+	public ArrayList<AddButtonSwitch> switcH;
 	
 	private static final long serialVersionUID = 1L;
-	int y,x;
 	
 	JLayeredPane layeredPane;
 	JButton btnAp;
@@ -32,6 +29,8 @@ public class Frame extends JFrame implements ActionListener{
 	
   
   public Frame(String title){
+	  router =new ArrayList<AddButtonRouter>();
+	  switcH = new ArrayList<AddButtonSwitch>();
 	  //Titre
 	  setTitle(title);
 	  setSize(650, 600); //Resolution
@@ -86,13 +85,16 @@ public class Frame extends JFrame implements ActionListener{
   
   public void actionPerformed(ActionEvent e){
 	  if(e.getSource() == btnRouter ){
-		  AddButtonRouter rr =new AddButtonRouter();
-		  panel.add(rr.getButton());
+		  router.add(new AddButtonRouter());
+		  panel.add(router.get(router.size()-1).getLabel());
 		  panel.repaint();
 		  panel.revalidate();
 		}
 	  if(e.getSource() == btnSwitch){
-		  
+		  switcH.add(new AddButtonSwitch());
+		  panel.add(switcH.get(switcH.size()).getLabel());
+		  panel.repaint();
+		  panel.revalidate();
 	  }
 	}
   
