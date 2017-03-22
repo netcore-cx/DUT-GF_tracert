@@ -35,4 +35,8 @@ public class EditPC {
 		interfaceList.add(new InterfacePC(name, mac, ip, mask, passAdr, dnsAdr));
 		PC.list.set(i, copyPC);
 	}
+	
+	public static void editInt(int i){
+		int select = Menus.selectPCInt(i, "MENU PRINCIPAL > EDITER UNE MACHINE > PC > INTERFACE > ");
+	}
 }

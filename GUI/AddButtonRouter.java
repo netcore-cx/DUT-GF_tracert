@@ -19,7 +19,7 @@ public class AddButtonRouter{
 		this.id = ID + 1;
 		this.button = new JButton();
 		this.button.setIcon((new ImageIcon("res/icon/router_blue_64x64.png")));
-		this.button.setBounds(29, 9, 40, 40);
+		this.button.setBounds(29, 9, 86, 64);
 		this.button.addMouseListener(new MouseAdapter(){
 			@Override
 			public void mousePressed(MouseEvent e){

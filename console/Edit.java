@@ -39,11 +39,11 @@ public class Edit {
 				}else if(select.toLowerCase().equals("name")){
 					EditPC.name(i-1);
 				}else if(select.toLowerCase().equals("add")){
-					//EditPC.addInt(i-1);
+					EditPC.addInt(i-1);
 				}else if(select.toLowerCase().equals("remove")){
 					//EditPC.removeInt(i-1);
 				}else if(select.toLowerCase().equals("edit")){
-					//EditPC.editInt(i-1);
+					EditPC.editInt(i-1);
 				}else if(select.toLowerCase().equals("list")){
 					//EditPC.listInt(i-1);
 				}else if(select.toLowerCase().equals("service")){

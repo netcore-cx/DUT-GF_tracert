@@ -71,6 +71,7 @@ public class Frame extends JFrame implements ActionListener{
 	  panel = new JPanel();
 	  panel.setBounds(12, 99, 628, 449);
 	  panel.setBackground(Color.GRAY);
+	  panel.setLayout(null);
 	  layeredPane.add(panel);
 	  
 	  //Action
