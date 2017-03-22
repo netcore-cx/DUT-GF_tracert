@@ -4,7 +4,7 @@ import machines.*;
 import machines.Router;
 import machines.Switch;
 
-public class DelMachine {
+public class Delete {
 	private static Scanner cin = new Scanner(System.in);
 	 
 	public static void Ordi(){

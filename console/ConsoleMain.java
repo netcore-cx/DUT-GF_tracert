@@ -33,13 +33,13 @@ public class ConsoleMain {
 			if(select.toLowerCase().equals("exit")){
 				stop = true;
 			}else if(select.toLowerCase().equals("pc")){
-				DelMachine.Ordi();
+				Delete.Ordi();
 			}else if(select.toLowerCase().equals("router")){
-				DelMachine.Router();
+				Delete.Router();
 			}else if(select.toLowerCase().equals("switch")){
-				DelMachine.Switch();
+				Delete.Switch();
 			}else if(select.toLowerCase().equals("ap")){
-				DelMachine.AccessPoint();
+				Delete.AccessPoint();
 			}else{
 				System.out.println("[ERREUR] Votre choix est incorrecte");
 			}
