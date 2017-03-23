@@ -68,7 +68,7 @@ public class Frame extends JFrame implements ActionListener{
 		
 	  //Ajout de la zone de déplacement des JButton
 	  panel = new JPanel();
-	  panel.setBounds(12, 99, 628, 449);
+	  panel.setBounds(0, 100, 9999, 9999);
 	  panel.setBackground(Color.GRAY);
 	  panel.setLayout(null);
 	  layeredPane.add(panel);
