@@ -3,19 +3,17 @@ import javax.swing.JLayeredPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-import java.awt.GridBagLayout;
 import java.util.ArrayList;
 
-
-import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Frame extends JFrame implements ActionListener{
-	public ArrayList<AddButtonRouter> router;
-	public ArrayList<AddButtonSwitch> switcH;
+	public ArrayList<AddRouter> router;
+	public ArrayList<AddSwitch> switcH;
+	public ArrayList<AddTerm> term;
+	public ArrayList<AddAp> ap;
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -29,8 +27,10 @@ public class Frame extends JFrame implements ActionListener{
 	
   
   public Frame(String title){
-	  router =new ArrayList<AddButtonRouter>();
-	  switcH = new ArrayList<AddButtonSwitch>();
+	  router =new ArrayList<AddRouter>();
+	  switcH = new ArrayList<AddSwitch>();
+	  term = new ArrayList<AddTerm>();
+	  ap = new ArrayList<AddAp>();
 	  //Titre
 	  setTitle(title);
 	  setSize(650, 600); //Resolution
@@ -85,14 +85,26 @@ public class Frame extends JFrame implements ActionListener{
   
   public void actionPerformed(ActionEvent e){
 	  if(e.getSource() == btnRouter ){
-		  router.add(new AddButtonRouter());
+		  router.add(new AddRouter());
 		  panel.add(router.get(router.size()-1).getLabel());
 		  panel.repaint();
 		  panel.revalidate();
 		}
 	  if(e.getSource() == btnSwitch){
-		  switcH.add(new AddButtonSwitch());
-		  panel.add(switcH.get(switcH.size()).getLabel());
+		  switcH.add(new AddSwitch());
+		  panel.add(switcH.get(switcH.size()-1).getLabel());
+		  panel.repaint();
+		  panel.revalidate();
+	  }
+	  if(e.getSource() == btnPC){
+		  term.add(new AddTerm());
+		  panel.add(term.get(term.size()-1).getLabel());
+		  panel.repaint();
+		  panel.revalidate();
+	  }
+	  if(e.getSource() == btnAp){
+		  ap.add(new AddAp());
+		  panel.add(ap.get(ap.size()-1).getLabel());
 		  panel.repaint();
 		  panel.revalidate();
 	  }

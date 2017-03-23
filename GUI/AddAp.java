@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -8,23 +7,24 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import machines.AP;
 import machines.Router;
 
-public class AddButtonRouter{
+public class AddAp {
 	
-	private Router router;
+	private AP ap;
 	private int id;
 	private JButton button;
 	private JLabel label;
 	static int cpt;
 	int y,x;
 	
-	public AddButtonRouter(){
-		this.router = new Router();
+	public AddAp(){
+		this.ap = new AP();
 		this.id = cpt;
 		cpt = cpt +1;
-		this.label = new JLabel("Router "+this.id);
-		this.label.setIcon((new ImageIcon("res/icon/router_blue_64x64.png")));
+		this.label = new JLabel("AP "+this.id);
+		this.label.setIcon((new ImageIcon("res/icon/ap_blue_64x64.png")));
 		this.label.setVerticalTextPosition(AbstractButton.BOTTOM);
 		this.label.setHorizontalTextPosition(AbstractButton.CENTER);
 		this.label.setBounds(29, 9, 64, 80);
@@ -50,10 +50,11 @@ public class AddButtonRouter{
 	public JLabel getLabel(){
 		return label;
 	}
-	public Router getRouter(){
-		return router;
+	public AP getAp(){
+		return ap;
 	}
 	public int getId(){
 		return id;
 	}
+	
 }

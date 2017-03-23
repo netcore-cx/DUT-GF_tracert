@@ -7,28 +7,26 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import machines.Router;
-import machines.Switch;
+import machines.PC;
 
-public class AddButtonSwitch {
-	static int cpt;
+public class AddTerm {
 	
+	private PC pc;
 	private int id;
-	private Switch switcH;
+	private JButton button;
 	private JLabel label;
-	int x,y;
+	static int cpt;
+	int y,x;
 	
-	public AddButtonSwitch(){
+	public AddTerm(){
+		this.pc = new PC();
 		this.id = cpt;
-		this.switcH = new Switch();
 		cpt = cpt +1;
-		
-		this.label = new JLabel("Switch "+this.id);
-		this.label.setIcon((new ImageIcon("res/icon/switch_blue_64x64.png")));
+		this.label = new JLabel("Term "+this.id);
+		this.label.setIcon((new ImageIcon("res/icon/terminal_blue_64x64.png")));
 		this.label.setVerticalTextPosition(AbstractButton.BOTTOM);
 		this.label.setHorizontalTextPosition(AbstractButton.CENTER);
 		this.label.setBounds(29, 9, 64, 80);
-		//this.label.setLocation(29, 9);
 		this.label.addMouseListener(new MouseAdapter(){
 			@Override
 			public void mousePressed(MouseEvent e){
@@ -44,14 +42,17 @@ public class AddButtonSwitch {
 				}
 			});
 	}
+	public JButton getButton(){
+		return button;
+	}
 	public JLabel getLabel(){
 		return label;
 	}
-	public Switch getRouter(){
-		return switcH;
+	public PC getPc(){
+		return pc;
 	}
 	public int getId(){
 		return id;
 	}
-	
+
 }
