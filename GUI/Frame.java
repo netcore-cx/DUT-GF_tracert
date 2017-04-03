@@ -33,7 +33,7 @@ public class Frame extends JFrame implements ActionListener{
 	  ap = new ArrayList<AddAp>();
 	  //Titre
 	  setTitle(title);
-	  setSize(675,600); //Resolution
+	  setSize(656,600); //Resolution
 	  setIconImage(new ImageIcon("res/icon/icon.png").getImage()); //Icon du programme
 	  setLocationRelativeTo(null); //Affiche la fenetre au mileu
 	  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //kill le processus
