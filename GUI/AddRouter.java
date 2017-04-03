@@ -22,6 +22,8 @@ public class AddRouter{
 		this.router = new Router();
 		this.id = cpt;
 		cpt = cpt +1;
+		
+		
 		this.label = new JLabel("Router "+this.id);
 		this.label.setIcon((new ImageIcon("res/icon/router_blue_64x64.png")));
 		this.label.setVerticalTextPosition(AbstractButton.BOTTOM);
@@ -29,6 +31,7 @@ public class AddRouter{
 		this.label.setBounds(29, 9, 64, 80);
 		//this.label.setLocation(29, 9);
 		this.label.addMouseListener(new MouseAdapter(){
+			//Appel ma méthode quand on click le JPanel
 			@Override
 			public void mousePressed(MouseEvent e){
 				//RÃ©cupÃ¨re la position du button
@@ -37,6 +40,7 @@ public class AddRouter{
 				}
 			});
 		this.label.addMouseMotionListener(new MouseMotionAdapter(){
+			//Appel de la méthode quand la souris bouge
 			public void mouseDragged(MouseEvent e){
 				//DÃ©place le button
 				label.setLocation(e.getX() - x + label.getLocation().x, e.getY() - y + label.getLocation().y);

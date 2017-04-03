@@ -89,7 +89,7 @@ public class InterfaceIP extends InterfaceMac{
 	}
 	
 	
-	
+	//Test si @ip passé en paramète est local grace à InetAddress
 	public boolean isLocal(String ipDest) throws UnknownHostException{
 		int cptMask=0;
 		
